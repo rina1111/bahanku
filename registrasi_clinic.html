@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Registrasi clinic</title>
+	<title>Registrasi Klinik</title>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="description" content="Dr PRO template project">
@@ -58,7 +58,7 @@
 				<nav class="main_nav" style="color: black    ">
 					<ul class="d-flex flex-row align-items-center justify-content-start">
 						<li ><a href="index.html">Home</a></li>
-						<li class="active" ><a href="registrasi_clinic">Registrasi Clinic</a></li>
+						<li class="active" ><a href="registrasi_clinic">Registrasi Klinik</a></li>
 
 
 
@@ -71,7 +71,7 @@
 							">Login</button>
 							<div id="Dropdown" class="dropdown-content2" style="color: #57ccc3">
 								<a href="login.html">Login Customer</a>
-								<a href="reg_clinic.html">Login Clinic</a>
+								<a href="reg_clinic.html">Login Klinik</a>
 
 
 							</div>
@@ -188,7 +188,7 @@ window.onclick = function(event) {
 <li><a href="about.html">Payment</a></li>
 
 <li><a href="about.html">About Us</a></li>
-<li><a href="contact.html">Contact</a></li>
+<li><a href="contact.html">Detail Appointment</a></li>
 </ul>
 </nav>
 
@@ -249,7 +249,7 @@ window.onclick = function(event) {
 			<div class="container">
 				<div class="row">
 					<!----card langganan---->
-					<div class="col-lg-3" style="float: right;">
+					<div class="col-lg-4" style="float: right;">
 						<div class="card transition">
 							<h2 class="transition">Reguler </h2>
 
@@ -257,7 +257,7 @@ window.onclick = function(event) {
 							<div class="card_circle transition"></div>
 						</div>
 					</div>
-					<div class="col-lg-3">
+					<div class="col-lg-4">
 						<div class="card transition">
 							<h2 class="transition">Exclusive</h2>
 
@@ -265,7 +265,7 @@ window.onclick = function(event) {
 							<div class="card_circle transition"></div>
 						</div>
 					</div>
-					<div class="col-lg-3">
+					<div class="col-lg-4">
 						<div class="card transition">
 							<h2 class="transition">Premium </h2>
 
@@ -274,12 +274,7 @@ window.onclick = function(event) {
 						</div>
 					</div>
 
-					<div class="col">
-						<div class="home_content">
-							<div class="home_title">About us</div>
-							<div class="home_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
-						</div>
-					</div>
+					
 				</div>
 			</div>
 		</div>
@@ -417,24 +412,22 @@ p {
 	<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="images/2.jpg" data-speed="0.8"></div>
 
 	<div class="container">
-		<div class="row">
+	
 <div class="col">
-						<div class="home_content">
-							<div class="home_title" style="font-size: 36px; text-align: center; font-family: times rowman">Registrasi Clinic</div>
-							<div class="home_text"  style="font-size: 16px; text-align: center; font-family: times rowman">Registrasikan clinic mu hari ini! dan segera berlangganan dengan promo menarik!</div>
+						<div class="home_content" style="float: center;">
+							<div class="home_title" style="font-size: 60px; text-align: center; font-family: times rowman;" >Registrasi Klinik</div>
+							<div class="home_text"  style="font-size: 16px; text-align: center; font-family: times rowman">Registrasikan klinikmu dan berlangganan sekarang!</div>
 						</div>
 			<section class="signup" >
 				<div class="container " id="con1">
-					<div class="col-12">
-
-					</div>
+					
 					<div class="signup-content">
 						<div class="signup-form">
 							<form method="POST" class="register-form" id="register-form">
 								<div class="controls">
 									<span><i class="fas fa-building"></i></span>
 									<label class="control-label"></label>
-									<input class="form-control" type="text" name="nama_clinic"placeholder=" Clinic" style="font-size: 12px;" ><hr>
+									<input class="form-control" type="text" name="nama_klinik"placeholder=" Klinik" style="font-size: 12px;" ><hr>
 								</div>
 								<div class="controls">
 									<span><i class="fas fa-id-card-alt" style="float: center; "> </i></span>
@@ -444,7 +437,7 @@ p {
 								<div class="controls">
 									<span><i class="fas fa-at" style="float: center; "> </i></span>
 									<label class="control-label"></label>
-									<input class="form-control" type="text" name="email_clinic"placeholder="Email Clinic" style="font-size: 12px;" ><hr>
+									<input class="form-control" type="text" name="email_klinik"placeholder="Email Klinik" style="font-size: 12px;" ><hr>
 								</div>
 								<div class="controls">
 									<span><i class="fas fa-user" style="float: center; "> </i></span>
@@ -474,14 +467,14 @@ p {
 									<span><i class="fas fa-phone" style="float: center; "> </i></span>
 									<label class="control-label"></label>
 
-									<input class="form-control" type="text" name="telepon"placeholder="Telepon Clinic" style="font-size: 12px;"  ><hr>
+									<input class="form-control" type="text" name="tlp"placeholder="Telepon Klinik" style="font-size: 12px;"  ><hr>
 								</div>
 
 								<div class="controls">
 									<span><i class="fas fa-address-card" style="float: center; "> </i></span>
 									<label class="control-label"></label>
 
-									<input class="form-control" type="text" name="alamat"placeholder="Alamat Clinic
+									<input class="form-control" type="text" name="alamat"placeholder="Alamat Klinik
 
 									" style="font-size: 12px;"  ><hr>
 								</div>
@@ -548,14 +541,7 @@ p {
 <script src="js/global.js"></script>
 </div>
 </div>
-<div class="row newsletter_row">
-	<div class="col-lg-8 offset-lg-2">
 
-	</div>
-</div>
-</div>
-</div>
-</div>
 
 <!-- Footer -->
 
@@ -570,7 +556,7 @@ p {
 				<!-- Footer Erha -->
 				<div class="col-lg-3 footer_col">
 					<div class="footer_contact">
-						<div class="footer_title" style="text-align: center;">Erha Clinic</div><hr>
+						<div class="footer_title" style="text-align: center;">Erha Klinik</div><hr>
 						<div class="flip-card">
 							<div class="flip-card-inner">
 								<div class="flip-card-front">
@@ -614,7 +600,7 @@ p {
 				
 				<div class="col-lg-3 footer_col">
 					<div class="footer_contact">
-						<div class="footer_title" style="text-align: center;">Airin Clinic<hr></div>
+						<div class="footer_title" style="text-align: center;">Airin Klinik<hr></div>
 						<div class="flip-card">
 							<div class="flip-card-inner">
 								<div class="flip-card-front">
@@ -661,7 +647,7 @@ p {
 				<!-------natasha----->
 				<div class="col-lg-3 footer_col">
 					<div class="footer_contact">
-						<div class="footer_title" style="text-align: center;">Natasha Clinic</div><hr>
+						<div class="footer_title" style="text-align: center;">Natasha Klinik</div><hr>
 						<div class="flip-card">
 							<div class="flip-card-inner">
 								<div class="flip-card-front">
@@ -704,7 +690,7 @@ p {
 				<div class="col-lg-3 footer_col">
 					<div class="footer_contact">
 
-						<div class="footer_title" style="text-align: center;">Carissa Clinic<hr></div>
+						<div class="footer_title" style="text-align: center;">Carissa Klinik<hr></div>
 						<div class="flip-card">
 							<div class="flip-card-inner">
 								<div class="flip-card-front">
