@@ -1,0 +1,142 @@
+.main-timeline{
+    overflow: hidden;
+    position: relative;
+}
+.main-timeline:before{
+    content: "";
+    width: 3px;
+    height: 100%;
+    background: #fae1e4;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.main-timeline .timeline{
+    width: 50%;
+    float: right;
+    padding: 50px 50px 10px 50px;
+    margin-top: 50px;
+    position: relative;
+}
+
+.main-timeline .timeline:after{
+    content: "";
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #fae1e4;
+    border: 2px solid #3c1525;
+    position: absolute;
+    bottom: 53px;
+    left: -8px;
+}
+.main-timeline .timeline-content{
+    display: block;
+    padding: 25px 150px 25px 25px;
+    border-radius: 0 70px 70px 0;
+    background: white;
+    color: #5F9EA0;
+    position: relative;
+}
+.main-timeline .timeline-content:hover{ text-decoration: none; }
+.main-timeline .timeline-content:before{
+    content: "";
+    border-bottom: 20px solid transparent;
+    border-right: 62px solid #3c1525;
+    position: absolute;
+    bottom: 14px;
+    left: -53px;
+    transform: rotate(30deg);
+}
+.main-timeline .icon{
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    border-radius: 50%;
+    background: #BDB76B;
+    text-align: center;
+    margin: auto;
+    font-size: 30px;
+    color: #581c22;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 25px;
+}
+.main-timeline .title{
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin: 0 0 5px 0;
+}
+.main-timeline .description{ font-size: 14px; }
+.main-timeline .timeline:nth-child(2n){ padding: 50px 50px 10px 50px; }
+.main-timeline .timeline:nth-child(2n):before{
+    left: auto;
+    right: -40px;
+}
+.main-timeline .timeline:nth-child(2n):after{
+    left: auto;
+    right: -10px;
+}
+.main-timeline .timeline:nth-child(2n) .timeline-content{
+    border-radius:70px 0 0 70px;
+    padding: 25px  25px 25px 150px;
+}
+.main-timeline .timeline:nth-child(2n) .timeline-content:before{
+    border-right: 68px solid #3c1525;
+    bottom: 21px;
+    left: auto;
+    right: -50px;
+    transform: rotate(-226deg);
+}
+.main-timeline .timeline:nth-child(2n) .icon{
+    right: auto;
+    left: 25px;
+}
+.main-timeline .timeline:nth-child(2){ margin-top: 210px; }
+.main-timeline .timeline:nth-child(odd){ margin: -220px 0 50px 0; }
+.main-timeline .timeline:nth-child(even){ margin-bottom: 210px; }
+.main-timeline .timeline:first-child,
+.main-timeline .timeline:last-child:nth-child(even){ margin: 0 0 30px 0; }
+.main-timeline .timeline:last-child:nth-child(even){ margin-bottom: 0; }
+@media only screen and (max-width: 1200px){
+    .main-timeline .timeline{ padding: 50px 0 10px 50px; }
+    .main-timeline .timeline:nth-child(2n){ padding: 50px 50px 10px 0; }
+    .main-timeline .timeline-content{ padding: 25px 130px 25px 25px;}
+    .main-timeline .timeline:nth-child(2n) .timeline-content{ padding: 25px 25px 25px 130px; }
+}
+@media only screen and (max-width: 990px){
+    .main-timeline .timeline,
+    .main-timeline .timeline:nth-child(2n){ padding-top: 20px; }
+    .main-timeline .icon{ right: 15px; }
+    .main-timeline .timeline:nth-child(2n) .icon{ left: 15px; }
+}
+@media only screen and (max-width: 767px){
+    .main-timeline:before,
+    .main-timeline .timeline:after,
+    .main-timeline .timeline .timeline-content:before{ display: none; }
+    .main-timeline .timeline,
+    .main-timeline .timeline:nth-child(even),
+    .main-timeline .timeline:nth-child(odd){
+        width: 100%;
+        float: none;
+        padding: 50px 0 0 0;
+        margin: 0 0 30px 0;
+    }
+    .main-timeline .timeline:before,
+    .main-timeline .timeline:nth-child(2n):before{
+        left: 0;
+        transform: translateX(0);
+    }
+    .main-timeline .timeline:nth-child(2n) .timeline-content{
+        padding: 25px 120px 25px 25px;
+        border-radius: 0 70px 70px 0;
+    }
+    .main-timeline .timeline:nth-child(2n) .icon{
+        right: 20px;
+        left: auto;
+    }
+}

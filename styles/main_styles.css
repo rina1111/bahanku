@@ -877,7 +877,7 @@ section
 .why
 {
 	width: 100%;
-	background: #eff3f7;
+	background-image: url(images/qq9.jpg);
 }
 .why_content
 {
@@ -948,7 +948,7 @@ section
 .cta
 {
 	width: 100%;
-	background: #fd556d;
+	background-color: #5F9EA0;
 	padding-top: 49px;
 	padding-bottom: 46px;
 }
@@ -976,8 +976,8 @@ section
 	text-align: center;
 	font-size: 30px;
 	font-weight: 600;
-	color: #fff;
-	background: #ee4860;
+	color: #BDB76B;
+	background: white;
 	border-radius: 19px;
 	white-space: nowrap;
 }
