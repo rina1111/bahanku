@@ -1,0 +1,270 @@
+/* Variables */
+/* Mixins */
+/* General Styles */
+body {
+  font-family: "Droid Sans", "Arial", sans-serif;
+  font-size: 14px;
+  line-height: 2;
+}
+
+a {
+  color: #000;
+}
+a:hover, a:focus {
+  color: #CF8699;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-lowercase {
+  text-transform: lowercase;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+/* Magazine Styles */
+html, body {
+  height: 100%;
+}
+
+.magazine {
+  height: 100%;
+}
+@media screen and (min-width: 1240px) {
+  .magazine {
+    display: flex;
+    min-height: 100%;
+    height: auto;
+    flex-direction: row-reverse;
+  }
+}
+
+/* Magazine Photo */
+.magazine-photo {
+  display: flex;
+  align-items: center;
+  min-height: 500px;
+  height: 100%;
+  background: #000 url("http://www.orcosmetics.co.il/wp-content/uploads/sites/97/2015/03/Renewing-Beauty-model-front-flip.png") no-repeat center center;
+  background-size: cover;
+}
+@media screen and (min-width: 1000px) {
+  .magazine-photo {
+    width: 50%;
+    min-height: none;
+    height: auto;
+  }
+}
+
+.magazine-photo__wrapper {
+  width: 100%;
+}
+
+.magazine-photo__title {
+  margin: 5em 0 .25em;
+  font-family: "Playfair Display", "Times New Roman", serif;
+  font-size: 2em;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.35;
+}
+@media screen and (min-width: 620px) {
+  .magazine-photo__title {
+    font-size: 3em;
+  }
+}
+@media screen and (min-width: 768px) {
+  .magazine-photo__title {
+    font-size: 3.43em;
+  }
+}
+.magazine-photo__title span {
+  display: block;
+  font-size: 1.25em;
+  font-style: normal;
+  letter-spacing: .06em;
+}
+@media screen and (min-width: 415px) {
+  .magazine-photo__title span {
+    font-size: 1.75em;
+  }
+}
+
+.magazine-photo__line {
+  width: 50%;
+  border: 0;
+  border-bottom: 2px solid black;
+  opacity: .25;
+}
+
+.magazine-photo__desc {
+  margin: 1.5em 0 0;
+  color: #666;
+  letter-spacing: .14em;
+}
+
+/* Magazine Content */
+.magazine-content {
+  position: relative;
+  overflow: hidden;
+}
+@media screen and (min-width: 1240px) {
+  .magazine-content {
+    width: 50%;
+  }
+}
+
+.magazine-article__image {
+  position: absolute;
+  bottom: 2em;
+  left: 0;
+}
+
+.magazine-article__title {
+  margin: 8em 0 3em;
+  font-family: "Playfair Display", "Times New Roman", serif;
+  font-size: 1.43em;
+  font-style: italic;
+  font-weight: normal;
+  letter-spacing: .1em;
+}
+@media screen and (min-width: 620px) {
+  .magazine-article__title {
+    margin-top: 4em;
+  }
+}
+.magazine-article__title span {
+  display: block;
+  max-width: 330px;
+  margin: 0 auto;
+  color: #FFF;
+  font-family: "Oswald", "Droid Sans", "Arial", sans-serif;
+  font-size: 3em;
+  font-style: normal;
+  letter-spacing: .13em;
+  line-height: 1.35;
+  background: #000;
+}
+@media screen and (min-width: 415px) {
+  .magazine-article__title span {
+    font-size: 4em;
+  }
+}
+
+.magazine-article__body {
+  position: relative;
+  z-index: 1;
+  width: 90%;
+  margin: 0 auto 20em;
+}
+@media screen and (min-width: 415px) {
+  .magazine-article__body {
+    width: 80%;
+  }
+}
+@media screen and (min-width: 620px) {
+  .magazine-article__body {
+    -webkit-column-count: 2;
+            column-count: 2;
+    -webkit-column-gap: 1em;
+            column-gap: 1em;
+    padding-left: 5em;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .magazine-article__body {
+    width: 70%;
+    margin-bottom: 10em;
+    padding-left: 10em;
+  }
+}
+.magazine-article__body p {
+  margin: 0;
+  padding: .5em .8em;
+  background: #FFF;
+}
+.magazine-article__body p strong {
+  display: block;
+}
+.magazine-article__body p:first-of-type {
+  padding: .5em .8em;
+  color: #FFF;
+  background: #000;
+  text-decoration: underline;
+}
+@media screen and (min-width: 620px) {
+  .magazine-article__body p:first-of-type {
+    margin-top: -8em;
+  }
+}
+
+.magazine-article__body-title {
+  width: 150px;
+  height: 150px;
+  line-height: 150px;
+  -webkit-column-span: all;
+          column-span: all;
+  margin: 0 auto 2em;
+  color: #FFF;
+  font-family: "Oswald", "Droid Sans", "Arial", sans-serif;
+  font-weight: 400;
+  letter-spacing: .14em;
+  background: #CF8699;
+  border-radius: 50%;
+  shape-outside: circle();
+  -webkit-transform: rotate(10deg);
+          transform: rotate(10deg);
+}
+@media screen and (min-width: 415px) {
+  .magazine-article__body-title {
+    float: right;
+    margin: .5em;
+  }
+}
+@media screen and (min-width: 620px) {
+  .magazine-article__body-title {
+    float: none;
+    margin: 0 -1em 2em auto;
+  }
+}
+@media screen and (min-width: 1700px) {
+  .magazine-article__body-title {
+    margin-right: -2em;
+  }
+}
+
+.trapezoid {
+  position: absolute;
+  bottom: 14em;
+  left: 5em;
+  z-index: 0;
+  border-bottom: 950px solid #000;
+  border-left: 300px solid transparent;
+  border-right: 100px solid transparent;
+  height: 0;
+  width: 400px;
+  -webkit-transform: rotate(-40deg);
+          transform: rotate(-40deg);
+}
+
+/* Credits */
+.magazine-credits {
+  position: absolute;
+  top: 2em;
+  left: 0;
+  padding: .5em .8em;
+  color: #FFF;
+  font-size: .86em;
+  background: #000;
+}
+.magazine-credits a {
+  color: #FFF;
+}
+.magazine-credits p {
+  padding: 0;
+  line-height: 1.35;
+}

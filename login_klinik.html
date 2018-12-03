@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Registrasi Klinik</title>
+	<title>Login Klinik</title>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="description" content="Dr PRO template project">
@@ -35,7 +35,7 @@
 
 
 
-<body style="background-image: url()">
+<body style="background-image: url(images/1.jpg) ; width:100%">
 
 
 	
@@ -58,24 +58,22 @@
 				<nav class="main_nav" style="color: black    ">
 					<ul class="d-flex flex-row align-items-center justify-content-start">
 						<li ><a href="index.html">Home</a></li>
-						<li class="active" ><a href="registrasi_clinic">Registrasi Klinik</a></li>
 
 
-
-
-
-
-						<li ><div class="Login">
-							<button onclick="myFunction2()" class="dropbtn" style="font-size: 15px;
+						<li ><div class="Registrasi">
+							<button onclick="myFunction()" class="dropbtn" style="font-size: 15px;
 							font-weight: 600;
-							">Login</button>
-							<div id="Dropdown" class="dropdown-content2" style="color: #57ccc3">
-								<a href="login.html">Login Customer</a>
-								<a href="reg_clinic.html">Login Klinik</a>
+							">Registrasi</button>
+							<div id="myDropdown" class="dropdown-content" style="color: #57ccc3">
+								<a href="registrasi Customer.html">Registrasi Customer</a>
+								<a href="registrasi_clinic.html">Registrasi Clinic</a>
 
 
 							</div>
 						</div></li>
+						<li class="active"><a href="login.html">Login Klinik</a></li>
+
+
 
 
 
@@ -118,8 +116,7 @@
 							text-decoration: none;
 							display: block;
 						}
-
-						.dropdown-content2 {
+							.dropdown-content2 {
 							display: none;
 							position: absolute;
 							background-color: white;
@@ -135,7 +132,6 @@
 							display: block;
 						}
 
-
 						.dropdown a:hover {background-color:  white;}
 
 						.show {display: block;}
@@ -145,6 +141,29 @@
 toggle between hiding and showing the dropdown content */
 function myFunction() {
 	document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+	if (!event.target.matches('.dropbtn')) {
+
+		var dropdowns = document.getElementsByClassName("dropdown-content2");
+		var i;
+		for (i = 0; i < dropdowns.length; i++) {
+			var openDropdown = dropdowns[i];
+			if (openDropdown.classList.contains('show')) {
+				openDropdown.classList.remove('show');
+			}
+		}
+	}
+}
+</script>
+
+	<script>
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction2() {
+	document.getElementById("Dropdown").classList.toggle("show");
 }
 
 // Close the dropdown if the user clicks outside of it
@@ -163,29 +182,7 @@ window.onclick = function(event) {
 }
 </script>
 
-<script>
-/* When the user clicks on the button, 
-toggle between hiding and showing the dropdown content */
-function myFunction2() {
-	document.getElementById("Dropdown").classList.toggle("show");
-}
 
-// Close the dropdown if the user clicks outside of it
-window.onclick = function(event) {
-	if (!event.target.matches('.dropbtn')) {
-
-		var dropdowns = document.getElementsByClassName("dropdown-content2");
-		var i;
-		for (i = 0; i < dropdowns.length; i++) {
-			var openDropdown = dropdowns[i];
-			if (openDropdown.classList.contains('show')) {
-				openDropdown.classList.remove('show');
-			}
-		}
-	}
-}
-</script>
-<li><a href="about.html">Payment</a></li>
 
 <li><a href="about.html">About Us</a></li>
 <li><a href="contact.html">Appointment</a></li>
@@ -236,290 +233,58 @@ window.onclick = function(event) {
 	</div>
 </div>
 
-
 <!-- Home -->
-<div class="Home">
-
-	<div class="home d-flex flex-column align-items-start justify-content-end">
-		<!-- <div class="background_image" style="background-image:url(images/about.jpg)"></div> -->
-		<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="" data-speed="0.8"></div>
-		<div class="home_overlay"><img src="images/1.jpg" alt=""></div>
-		<div class="home_container">
-
-			<div class="container">
-				<div class="row">
-					<!----card langganan---->
-					<div class="col-lg-4" style="float: right;">
-						<div class="card transition">
-							<h2 class="transition">Reguler </h2>
-
-							<div class="cta-container transition"><a href="payment.html" class="cta2">Rp. 69,999 </a></div>
-							<div class="card_circle transition"></div>
-						</div>
-					</div>
-					<div class="col-lg-4">
-						<div class="card transition">
-							<h2 class="transition">Exclusive</h2>
-
-							<div class="cta-container transition"><a href="payment.html" class="cta2">Rp.124,999 </a></div>
-							<div class="card_circle transition"></div>
-						</div>
-					</div>
-					<div class="col-lg-4">
-						<div class="card transition">
-							<h2 class="transition">Premium </h2>
-
-							<div class="cta-container transition"><a href="payment.html" class="cta2">Rp. 399,999</a></div>
-							<div class="card_circle transition"></div>
-						</div>
-					</div>
-
-					
-				</div>
-			</div>
-		</div>
-	</div>
-
-</div>
 
 
-<style type="">
-@import url('http://fonts.googleapis.com/css?family=Raleway:400,200')
-body {   font-family: Helvetica, san-serif;
-	background: -webkit-linear-gradient(90deg, #00aaee 10%, #DD2476 90%); /* Chrome 10+, Saf5.1+ */
-	background:    -moz-linear-gradient(90deg, #00aaee 10%, #DD2476 90%); /* FF3.6+ */
-	background:     -ms-linear-gradient(90deg, #00aaee 10%, #DD2476 90%); /* IE10 */
-	background:      -o-linear-gradient(90deg, #00aaee 10%, #DD2476 90%); /* Opera 11.10+ */
-background:         linear-gradient(90deg, #00aaee 10%, #DEB887 90%); /* W3C */ }
-.transition { transition: .3s cubic-bezier(.3, 0, 0, 1.3) }
-.card {
-	background-color: white;
-	bottom: 0;
-	box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.3);
-	-webkit-box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.3);
-	-moz-box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.3);
-	height: 300px;
-	left: 0;
-	margin: auto;
-	overflow: hidden;
-	position: absolute;
-	right: 0;
-	top: 0;
-	width: 300px;
-}
-.card:hover {
-	height: 450px;
-	width: 300px;
-}
-.card:hover .cta-container {
-	display: inline;
-	margin-top: 380px;
-}
-.card:hover .card_circle {
-	background-size: cover;
-	border-radius: 0;
-	margin-top: -130px;
-}
-.card:hover h2 {
-	background: 	#DEB887;
-	color: white;
-	margin-top: 100px;
-	padding: 5px;
-}
-.card:hover h2 small { color: #fff }
-.card:hover p { margin-top: 300px }
-.card_circle {
-	background: url(images/ini.jpg) no-repeat center bottom;
-	background-color: 	white;
-	background-size: cover;
-	border-radius: 50%;
-	height: 400px;
-	margin-left: -75px;
-	margin-top: -270px;
-	position: absolute;
-	width: 450px;
-}
-h2 {
-	color: #DEB887;
-	font-family: 'Raleway', sans-serif;
-	font-size: 24px;
-	font-weight: 200;
-	margin-top: 150px;
-	position: absolute;
-	text-align: center;
-	width: 100%;
-	z-index: 9999;
-}
-p {
-	color: rgba(0,0,0,.6);
-	font-family: 'Raleway', sans-serif;
-	font-size: 100%;
-	font-weight: normal;
-	margin-top: 200px;
-	position: absolute;
-	text-align: center;
-	z-index: 9999;
-}
-.cta-container {
-	display: none;
-	margin-top: 320px;
-	position: absolute;
-	text-align: center;
-	width: 100%;
-	z-index: 9999;
-	background-color:#DEB887;
-}
-.cta2 a {
-	color: black;
-}
-.cta2 {
-	-moz-border-radius: 2px;
-	-moz-transition: 0.2s ease-out;
-	-ms-transition: 0.2s ease-out;
-	-o-transition: 0.2s ease-out;
-	-webkit-border-radius: 2px;
-	-webkit-transition: 0.2s ease-out;
-	background-clip: padding-box;
-	border: 2px solid #DEB887;
-	border-radius: 2px;
-	color: 	white;
-	display: inline-block;
-	font-family: 'Raleway', sans-serif;
-	font-size: 17px;
-	font-weight: 400;
-	height: 36px;
-	letter-spacing: 0.5px;
-	line-height: 36px;
-	margin-bottom: 15px;
-	padding: 0 2rem;
-	text-decoration: none;
-	text-transform: uppercase;
-	transition: 0.2s ease-out;
-}
-.cta:hover {
-	background-color: #DEB887;
-	box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-	color:white;
-	-moz-box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-	-webkit-box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-</style>
 
 <!--isiregistrasi----->
 
 
 <div class="newsletter">
-	<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="images/2.jpg" data-speed="0.8"></div>
-
+	<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="" data-speed="0.8"></div>
 	<div class="container">
-	
-<div class="col">
-						<div class="home_content" style="float: center;">
-							<div class="home_title" style="font-size: 60px; text-align: center; font-family: times rowman;" >Registrasi Klinik</div>
-							<div class="home_text"  style="font-size: 16px; text-align: center; font-family: times rowman">Registrasikan klinikmu dan berlangganan sekarang!</div>
+		<div class="row">
+
+			<section class="sign-in">
+				<div class="container">
+					<div class="signin-content">
+						<div class="signin-image">
+							<figure><img src="images/idcardclinic.png" alt="sing up image"></figure>
+							<a href="registrasi customer.html" class="signup-image-link">Create an account clinic</a>
 						</div>
-			<section class="signup" >
-				<div class="container " id="con1">
-					
-					<div class="signup-content">
-						<div class="signup-form">
-							<form method="POST" class="register-form" id="register-form">
-								<div class="controls">
-									<span><i class="fas fa-building"></i></span>
-									<label class="control-label"></label>
-									<input class="form-control" type="text" name="nama_klinik"placeholder=" Klinik" style="font-size: 12px;" ><hr>
-								</div>
-								<div class="controls">
-									<span><i class="fas fa-id-card-alt" style="float: center; "> </i></span>
-									<label class="control-label"></label>
-									<input class="form-control" type="text" name="nm_pemilk"placeholder="Nama Pemilik" style="font-size: 12px;" ><hr>
-								</div>
-								<div class="controls">
-									<span><i class="fas fa-at" style="float: center; "> </i></span>
-									<label class="control-label"></label>
-									<input class="form-control" type="text" name="email_klinik"placeholder="Email Klinik" style="font-size: 12px;" ><hr>
-								</div>
-								<div class="controls">
-									<span><i class="fas fa-user" style="float: center; "> </i></span>
-									<label class="control-label"></label>
-									<input class="form-control" type="text" name="user_clinic"placeholder="Username" style="font-size: 12px;" ><hr>
-								</div>
-								<div class="controls">
-									<span><i class="fas fa-qrcode" style="float: center; "> </i></span>
-									<label class="control-label"></label>
-									<input class="form-control" type="text" name="pass"placeholder="Password" style="font-size: 12px;" ><hr>
-								</div>
-								<div class="controls">
-									<span><i class="fab fa-amazon-pay" style="float: center; "> </i></span>
-									<label class="control-label"></label>
-									<select class="form-control" name="Registrasi" class="required" style="font-size: 12px;">
-										<option disabled="disabled" selected="selected"">Berlangganan</option>
 
-										<option value="Rp.69.999">Rp.69,999/bulan</option>
-										<option value="Perempuan">Rp.124,999/2 bulan</option>
-										<option value="Perempuan">Rp.399,999/6 bulan</option>
-
-
-									</select> <hr> 
-								</div>               
-
-								<div class="controls">
-									<span><i class="fas fa-phone" style="float: center; "> </i></span>
-									<label class="control-label"></label>
-
-									<input class="form-control" type="text" name="tlp"placeholder="Telepon Klinik" style="font-size: 12px;"  ><hr>
-								</div>
-
-								<div class="controls">
-									<span><i class="fas fa-address-card" style="float: center; "> </i></span>
-									<label class="control-label"></label>
-
-									<input class="form-control" type="text" name="alamat"placeholder="Alamat Klinik
-
-									" style="font-size: 12px;"  ><hr>
-								</div>
-
+						<div class="signin-form">
+							<h2 class="form-title">LogIn Klinik</h2>
+							<form method="POST" class="register-form" id="login-form">
 								<div class="form-group">
-									<input type="checkbox" name="agree-term" id="agree-term" class="agree-term" onclick="myFunction()" />
-
-									<label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>
-
-									<script>
-										function myFunction() {
-											var checkBox = document.getElementById("agree-term");
-											var text = document.getElementById("text");
-											if (checkBox.checked == true){
-												text.style.display = "block";
-											} else {
-												text.style.display = "none";
-											}
-										}
-									</script>
-
+									<label for="your_name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+									<input type="text" name="Email" id="Email" placeholder="Email"/>
+								</div>
+								<div class="form-group">
+									<label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
+									<input type="password" name="your_pass" id="your_pass" placeholder="Password"/>
+								</div>
+								<div class="form-group">
+									<input type="checkbox" name="remember-me" id="remember-me" class="agree-term" />
+									<label for="remember-me" class="label-agree-term"><span><span></span></span>Remember me</label>
 								</div>
 								<div class="form-group form-button">
-									<input type="submit" name="signup" id="signup" class="form-submit" value="Register"/>
+									<input type="submit" name="signin" id="signin" class="form-submit" value="Log in"/>
 								</div>
 							</form>
-						</div>
-						<div class="signup-image">
-							<figure><img src="images/card2.png" alt="sing up image"></figure>
-							<a href="login.html" class="signup-image-link">I am already member</a>
+
 						</div>
 					</div>
 				</div>
 			</section>
+
+
+
+
+			<!-- Sign up form -->
+
 		</div>
 	</div>
-</div>
-
-
-
-
-<!-- Sign up form -->
-
-</div>
-</div>
 
 </div>
 
@@ -541,7 +306,14 @@ p {
 <script src="js/global.js"></script>
 </div>
 </div>
+<div class="row newsletter_row">
+	<div class="col-lg-8 offset-lg-2">
 
+	</div>
+</div>
+</div>
+</div>
+</div>
 
 <!-- Footer -->
 
@@ -800,7 +572,6 @@ p {
 </div>
 </footer>
 </div>
-
 <script src="js/jquery-3.2.1.min.js"></script>
 <script src="styles/bootstrap-4.1.2/popper.js"></script>
 <script src="styles/bootstrap-4.1.2/bootstrap.min.js"></script>
