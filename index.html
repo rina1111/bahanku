@@ -43,8 +43,8 @@
         n.className += t + "js", ("ontouchstart" in o || o.DocumentTouch && c instanceof DocumentTouch) && (n.className += t + "touch")
       }(window, document);
     </script>
-  <link href="https://daks2k3a4ib2z.cloudfront.net/img/favicon.ico" rel="shortcut icon" type="image/x-icon">
-  <link href="https://daks2k3a4ib2z.cloudfront.net/img/webclip.png" rel="apple-touch-icon">
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+<link rel="icon" href="images/favicon.ico" type="image/x-icon">
 
 	<link rel="stylesheet" type="text/css" href="styles/loginsignup.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -56,7 +56,7 @@
 
 
 
-<body style="background-image: url(images/qq9.jpg) ; width:100%">
+<body style="background-image: url(images/1.jpg) ; width:100%">
 
 
 	
@@ -102,7 +102,7 @@
 							">Login</button>
 							<div id="Dropdown" class="dropdown-content2" style="color: #57ccc3">
 								<a href="login.html">Login Customer</a>
-								<a href="reg_clinic.html">Login Klinik</a>
+								<a href="login_klinik.html">Login Klinik</a>
 
 
 							</div>
@@ -217,6 +217,8 @@ window.onclick = function(event) {
 
 <li><a href="about.html">About Us</a></li>
 <li><a href="appointment.html">Appointment</a></li>
+
+
 
 </ul>
 </nav>	
@@ -343,8 +345,8 @@ window.onclick = function(event) {
 
 	<!-- Intro -->
 
-	<div class="intro" style="background-image:url(images/1.jpg);width:100%;">
-		<div class="container">
+	<div class="intro" style="background-color: transparent;">
+		<div class="container" >
 			<div class="row">
 
 				<!-- Intro Content -->
@@ -453,7 +455,8 @@ window.onclick = function(event) {
 									</select>
 								<input type="text" id="datepicker" class="intro_input datepicker" placeholder="Tanggal Appointment" required="required">
 							</div>
-							<button class="button button_1 intro_button trans_200">make an appointment</button>
+							<button class="button button_1 intro_button trans_200">make an appointment</button><hr>
+							<button class="button button_1 intro_button trans_200" style="background-color: lightgrey;">Jadwal Dokter</button>
 						</form>
 					</div>
 				</div>
