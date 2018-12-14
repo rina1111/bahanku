@@ -64,27 +64,14 @@
       <div class="topnav" id="myTopnav">
         <nav class="main_nav" style="color: black    ">
           <ul class="d-flex flex-row align-items-center justify-content-start">
-            <li ><a href="index.html">Home</a></li>
-            <li ><a href="registrasi_clinic">Registrasi Klinik</a></li>
+           
+           
 
 
 
 
 
-
-            <li ><div class="Login">
-              <button onclick="myFunction2()" class="dropbtn" style="font-size: 15px;
-              font-weight: 600;
-              ">Login</button>
-              <div id="Dropdown" class="dropdown-content2" style="color: #57ccc3">
-                <a href="login.html">Login Customer</a>
-                <a href="reg_clinic.html">Login Klinik</a>
-                
-              </div>
-            </div></li>
-
-
-
+         
 
 
 
@@ -146,57 +133,9 @@
 
             .show {display: block;}
           </style>
-          <script>
-/* When the user clicks on the button, 
-toggle between hiding and showing the dropdown content */
-function myFunction() {
-  document.getElementById("myDropdown").classList.toggle("show");
-}
-
-// Close the dropdown if the user clicks outside of it
-window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn')) {
-
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
-  }
-}
-</script>
-
-<script>
-/* When the user clicks on the button, 
-toggle between hiding and showing the dropdown content */
-function myFunction2() {
-  document.getElementById("Dropdown").classList.toggle("show");
-}
-
-// Close the dropdown if the user clicks outside of it
-window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn')) {
-
-    var dropdowns = document.getElementsByClassName("dropdown-content2");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
-  }
-}
-</script>
+   
 
 
-<li><a href="about.html">About Us</a></li>
-<li class=" active" ><a href="datadokter.html">Jadwal Dokter</a></li>
-<li ><a href="datadokter.html">Klinik</a></li>
-</ul>
 
 </nav>
 
@@ -226,19 +165,25 @@ window.onclick = function(event) {
 
 <br>
 <br><br>
+<br>
+<br>
+<br>
+<br>
   <section>
+<li style="font-size: 36px; text-align: center; font-family: times rowman "> Jadwal Dokter</li>
   <!--for demo wrap-->
-  <h1>Data Appointment</h1>
   <div class="tbl-header">
     <table cellpadding="0" cellspacing="0" border="0">
       <thead>
+        
         <tr>
+ 
           <th>Id</th>
           <th>NIP Dokter</th>
           <th>Nama Dokter</th>
           <th>Klinik</th>
           <th>Jadwal Dokter</th>
-        </tr>
+        </tr> <hr>
       </thead>
     </table>
   </div>
@@ -260,7 +205,7 @@ window.onclick = function(event) {
       </tbody>
     </table>
   </div>
-<button style="background-color:  #5F9EA0; border-radius: 5px; border-style: double;"><a href="myclinic.html"><i class='fas fa-reply-all' style="font-size: 24px; color: white;"></i></a></button>
+
 </section>
 
 <!-- follow me template -->

@@ -455,7 +455,7 @@ window.onclick = function(event) {
 								</select>
 								<select class="intro_select intro_input" required="required">
 										<option disabled="" selected="" value="">Doctor</option>
-										<option>Doctor 1</option>
+										<option>dr. Erna SpKk</option>
 										<option>Doctor 2</option>
 										<option>Doctor 3</option>
 										<option>Doctor 4</option>
@@ -464,7 +464,7 @@ window.onclick = function(event) {
 
 								<select class="intro_select intro_input" required="required">
 										<option disabled="" selected="" value="">Jadwal Dokter</option>
-										<option>Doctor 1</option>
+										<option>Senin, 09.15-09.30</option>
 										<option>Doctor 2</option>
 										<option>Doctor 3</option>
 										<option>Doctor 4</option>

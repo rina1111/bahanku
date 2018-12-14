@@ -1,17 +1,17 @@
+<?php require_once("koneksi.php");
+    if (!isset($_SESSION)) {
+        session_start();
+    } ?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>About Us</title>
-<meta charset="utf-8">
+	<title>Appointment</title>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta content="width=device-width, initial-scale=1" name="viewport">
-  <meta content="Webflow" name="generator">
-  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-<link rel="icon" href="images/favicon.ico" type="image/x-icon">
-<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="styles/bootstrap-4.1.2/bootstrap.min.css">
 	<link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -29,11 +29,20 @@
 	<link href="plugins/jquery-datepicker/jquery-ui.css" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" type="text/css" href="styles/main_styles.css">
 	<link rel="stylesheet" type="text/css" href="styles/responsive.css">
-  <link href="css/normalize.css" rel="stylesheet" type="text/css">
-  <link href="css/webflow.css" rel="stylesheet" type="text/css">
-  <link href="css/book-project-css.webflow.css" rel="stylesheet" type="text/css">
-  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js" type="text/javascript"></script>
-  <script type="text/javascript">
+
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ==" crossorigin=""/>
+	<script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js" integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw==" crossorigin=""></script>
+
+	<link rel="stylesheet" type="text/css" href="styles/loginsignup.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="css/cardku.css">
+<link rel="stylesheet" type="text/css" href="css/footer.css">
+<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+
+ <script type="text/javascript">
       WebFont.load({
         google: {
           families: ["PT Sans:400,400italic,700,700italic"]
@@ -48,21 +57,13 @@
         n.className += t + "js", ("ontouchstart" in o || o.DocumentTouch && c instanceof DocumentTouch) && (n.className += t + "touch")
       }(window, document);
     </script>
-  <link href="https://daks2k3a4ib2z.cloudfront.net/img/favicon.ico" rel="shortcut icon" type="image/x-icon">
-  <link href="https://daks2k3a4ib2z.cloudfront.net/img/webclip.png" rel="apple-touch-icon">
-
-	<link rel="stylesheet" type="text/css" href="styles/loginsignup.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" type="text/css" href="css/style3.css">
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-<link rel="stylesheet" type="text/css" href="css/footer.css">
-<link rel="stylesheet" type="text/css" href="css/magazine.css ">
-
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+<link rel="icon" href="images/favicon.ico" type="image/x-icon">
 </head>
 
 
 
-<body style="background-image: url(images/qq9.jpg) ; width:100%">
+<body style="background-image: url(images/1.jpg) ; width:100%">
 
 
 	
@@ -75,7 +76,7 @@
 			<div class="logo">
 				<a href="#">
 					<div style="color: #5F9EA0	">MediSkin<span style="color:#BDB76B ">Appointment</span></div><hr>
-					<div style="color: #556B2F">Make An Appointment <span style="color: #556B2F"> with your favorite clinic!</span></div><hr>
+					<div style="color: #556B2F; font-size: 14px;">Make An Appointment <span style="color: #556B2F"> with your favorite clinic!</span></div><hr>
 					
 				</a>
 			</div>
@@ -85,36 +86,24 @@
 				<nav class="main_nav" style="color: black    ">
 					<ul class="d-flex flex-row align-items-center justify-content-start">
 						<li ><a href="index.html">Home</a></li>
+<li><a href="about.php">About Us</a></li>
+<li><a href="datadokter.html">Jadwal Dokter</a></li>
+<li><a href="Klinik.html">Klinik</a></li>
+<li class="active"><a href="Appointment.html">Appointment</a></li>
+
 
 
 						<li ><div class="Registrasi">
 							<button onclick="myFunction()" class="dropbtn" style="font-size: 15px;
 							font-weight: 600;
-							">Registrasi</button>
+							">MyProfile</button>
 							<div id="myDropdown" class="dropdown-content" style="color: #57ccc3">
-								<a href="registrasi Customer.html">Registrasi Customer</a>
-								<a href="registrasi_clinic.html">Registrasi Klinik</a>
-
-
+								<a href="MyProfile.php">Back MyProfile</a>
+								<a href="logout.php">logout</a>
+								
 							</div>
 						</div></li>
-
-
-
-
-<li ><div class="Login">
-							<button onclick="myFunction2()" class="dropbtn" style="font-size: 15px;
-							font-weight: 600;
-							">Login</button>
-							<div id="Dropdown" class="dropdown-content2" style="color: #57ccc3">
-								<a href="login.html">Login Customer</a>
-								<a href="reg_clinic.html">Login Klinik</a>
-
-
-							</div>
-						</div></li>
-
-
+					
 
 
 
@@ -198,33 +187,13 @@ window.onclick = function(event) {
 }
 </script>
 
-	<script>
-/* When the user clicks on the button, 
-toggle between hiding and showing the dropdown content */
-function myFunction2() {
-	document.getElementById("Dropdown").classList.toggle("show");
-}
+	
 
-// Close the dropdown if the user clicks outside of it
-window.onclick = function(event) {
-	if (!event.target.matches('.dropbtn')) {
 
-		var dropdowns = document.getElementsByClassName("dropdown-content");
-		var i;
-		for (i = 0; i < dropdowns.length; i++) {
-			var openDropdown = dropdowns[i];
-			if (openDropdown.classList.contains('show')) {
-				openDropdown.classList.remove('show');
-			}
-		}
-	}
-}
-</script>
 
-<li class="active"><a href="about.html">About Us</a></li>
-<li><a href="appointment.html">Appointment</a></li>
+
 </ul>
-</nav>	
+</nav>
 
 </div>
 
@@ -247,56 +216,52 @@ window.onclick = function(event) {
 <!-- Hamburger -->
 
 </div>
-</div>
 </header>
 
-
-<!------main-------->
- <article style="background-image: url(images/1.jpg);">
-  <div class="hero"></div>
-  <div class="content">
-  	
-    <h2 style="font-size: 32px;background-color: transparent;">
-    	  MediSkin Appointment
-      <br>
-    	<br>
-    	<br>
-    </h2>
-    <div class="content__header">
-      <h2 style="font-size: 34px; background-color: transparent;text-align:center; ">
-      <br>
-       MediSkin Appointment
-       <hr>
-      </h2>
-    
-    </div>
-    <div class="content__copy">
-
-       <p style="background-color: #BDB76B;border-style: dotted;">
-          MediSkin Appointment merupakan inovasi baru dalam dunia Kecantikan. MediSkin Appointmen berfungsi sebagai jembatan antara customer dan Klinik Kecantikan ternama. 
-        </p>
-     
-       
-    
-     
-      <p style="background-color: #5F9EA0; color: white;border-style: dotted;">
-        Kami memberikan pelayanan apointment atau biasa disebut dengan booking. Appointment dapat dilakukan oleh customer yang ingin melakukan perawaan di klinik yang bergabung dengan kami akan tetapi malas untuk antri langsung.
-          Dan Klinik kecantikan yang ingin bergabung dengan kami, dapa melakukan "Registrasi Klinik "</strong> 
-         Hanya dengan berlangganan Rp. 69,999/bulan, Klinik kamu bisa jadi member dan,dapatkan keuntungan menarik customer lebih mudah. Jadi kamu Mau perawatan? Tapi malas antri karna penuh saat akan daftar antrian? Saatnya Kamu beralih menggunakan Website Kami! permudah untuk melakukan Appointment dengan Klinik Kecantikan ternama! Cantik itu mudahkan? 
-        </p>
-        <hr>
-     
-    </div>
-  </div>
-</article>
-
-<!------------------------->
+<!-- isu Appointmeent-->
 
 
-
-	
-
-	<!-- Footer -->
+<br>
+			<br>
+			<br>
+	<div class="blog">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					
+					<!-- Blog Post -->
+					<div class="blog_post">
+						
+						<div class="blog_post_date d-flex flex-column align-items-center justify-content-center">
+						</div>
+			<hr>
+<hr>
+<div class="col-lg-12" style="float: right;">
+<div class="card">
+  <img src="images/id.png"  style="width:100%">
+  <h4 style="font-family: times rowman;">No Appointment</h4>
+  <h1>01</h1>
+  <p class="title"style=" font-size: 14px;font-family: times rowman;"> Nama :<a href=""style=" font-size: 14px; margin-right: 4px;font-family: times rowman;">Sarah jahsn</a></p>
+ <p class="title"style=" font-size: 14px;font-family: times rowman;"> Klinik :<a href=""style=" font-size: 14px;font-family: times rowman;">Erha Klinik</a></p>
+ <p class="title"style=" font-size: 14px;font-family: times rowman;"> Dokter :<a href=""style=" font-size: 14px;font-family: times rowman;">dr. Erna Widiawati. SpKk</a></p>
+ <p class="title"style=" font-size: 14px;font-family: times rowman;"> Tanggal Appointment:<a href=""style=" font-size: 14px;font-family: times rowman;"> 12/04/2018</a></p>
+  <p class="title"style=" font-size: 14px;font-family: times rowman;"> Hari & Waktu:<a href=""style=" font-size: 14px;font-family: times rowman;"> Senin 09.15-09.30</a></p>
+ <p class="title"style=" font-size: 14px;font-family: times rowman;"> Ruang:<a href=""style=" font-size: 14px;font-family: times rowman;"> R04</a></p>
+ <p class="title"style=" font-size: 14px;font-family: times rowman;"> Telepon:<a href=""style=" font-size: 14px;font-family: times rowman;"> 081224630757</a></p>
+  
+ <p><button>Cetak <i class="fas fa-print"></i></button></p>
+</div>
+	</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<br>
+	<br>
+<!---------------------------->
+<!-- Footer -->
 
 <footer style="background-color:black ;">
  <div class="container">
@@ -340,37 +305,12 @@ window.onclick = function(event) {
                </ul>
            </div>
       <div class="col-12">
-      <h6 style="text-align:center;">Copy Right by Rina Anjari</h6>
+      	<p style="text-align: center;">Copy Right by Rina Anjari</p><hr>
       </div>
   </div>
 </div>
 </footer>
 
-
-
-<script src="js/jquery-3.2.1.min.js"></script>
-<script src="styles/bootstrap-4.1.2/popper.js"></script>
-<script src="styles/bootstrap-4.1.2/bootstrap.min.js"></script>
-<script src="plugins/greensock/TweenMax.min.js"></script>
-<script src="plugins/greensock/TimelineMax.min.js"></script>
-<script src="plugins/scrollmagic/ScrollMagic.min.js"></script>
-<script src="plugins/greensock/animation.gsap.min.js"></script>
-<script src="plugins/greensock/ScrollToPlugin.min.js"></script>
-<script src="plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
-<script src="plugins/easing/easing.js"></script>
-<script src="plugins/parallax-js-master/parallax.min.js"></script>
-<script src="plugins/jquery-datepicker/jquery-ui.js"></script>
-<script src="js/custom.js"></script>
-<script src="js/style3.js"></script>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-23581568-13');
-</script>
 
 </body>
 </html>

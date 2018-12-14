@@ -1,3 +1,10 @@
+<?php require_once("koneksi.php");
+    if (!isset($_SESSION)) {
+        session_start();
+    } ?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -78,31 +85,27 @@
 			<div class="topnav" id="myTopnav">
 				<nav class="main_nav" style="color: black    ">
 					<ul class="d-flex flex-row align-items-center justify-content-start">
-						<li class="active" ><a href="index.html">Home</a></li>
-
-
-						<li ><div class="Registrasi">
-							<button onclick="myFunction()" class="dropbtn" style="font-size: 15px;
-							font-weight: 600;
-							">Registrasi</button>
-							<div id="myDropdown" class="dropdown-content" style="color: #57ccc3">
-								<a href="registrasi Customer.html">Registrasi Customer</a>
-								<a href="registrasi_clinic.html">Registrasi Klinik</a>
-
-
-							</div>
-						</div></li>
+						<li class="active" ><a href="index.php">Home</a></li>
 
 
 
+
+<li><a href="about.php">About Us</a></li>
+<li><a href="datadokter.html">Jadwal Dokter</a></li>
+<li><a href="Klinik.html">Klinik</a></li>
+
+<li><a href="Appointment.php">Appointment</a></li>
 
 <li ><div class="Login">
 							<button onclick="myFunction2()" class="dropbtn" style="font-size: 15px;
 							font-weight: 600;
-							">Login</button>
+							">MyProfile</button>
 							<div id="Dropdown" class="dropdown-content2" style="color: #57ccc3">
-								<a href="login.html">Login Customer</a>
-								<a href="login_klinik.html">Login Klinik</a>
+								<a href="myprofile.php">Back MyProfile</a>
+								
+
+								<a href="login.php">Logout</a>
+								
 
 
 							</div>
@@ -169,28 +172,7 @@
 
 						.show {display: block;}
 					</style>
-					<script>
-/* When the user clicks on the button, 
-toggle between hiding and showing the dropdown content */
-function myFunction() {
-	document.getElementById("myDropdown").classList.toggle("show");
-}
 
-// Close the dropdown if the user clicks outside of it
-window.onclick = function(event) {
-	if (!event.target.matches('.dropbtn')) {
-
-		var dropdowns = document.getElementsByClassName("dropdown-content2");
-		var i;
-		for (i = 0; i < dropdowns.length; i++) {
-			var openDropdown = dropdowns[i];
-			if (openDropdown.classList.contains('show')) {
-				openDropdown.classList.remove('show');
-			}
-		}
-	}
-}
-</script>
 
 	<script>
 /* When the user clicks on the button, 
@@ -214,11 +196,6 @@ window.onclick = function(event) {
 	}
 }
 </script>
-
-<li><a href="about.html">About Us</a></li>
-<li><a href="appointment.html">Appointment</a></li>
-
-
 
 </ul>
 </nav>	
@@ -447,7 +424,16 @@ window.onclick = function(event) {
 								</select>
 								<select class="intro_select intro_input" required="required">
 										<option disabled="" selected="" value="">Doctor</option>
-										<option>Doctor 1</option>
+										<option>dr. Erna SpKk</option>
+										<option>Doctor 2</option>
+										<option>Doctor 3</option>
+										<option>Doctor 4</option>
+										<option>Doctor 5</option>
+									</select>
+
+								<select class="intro_select intro_input" required="required">
+										<option disabled="" selected="" value="">Jadwal Dokter</option>
+										<option>Senin, 09.15-09.30</option>
 										<option>Doctor 2</option>
 										<option>Doctor 3</option>
 										<option>Doctor 4</option>
@@ -456,7 +442,6 @@ window.onclick = function(event) {
 								<input type="text" id="datepicker" class="intro_input datepicker" placeholder="Tanggal Appointment" required="required">
 							</div>
 							<button class="button button_1 intro_button trans_200">make an appointment</button><hr>
-							<button class="button button_1 intro_button trans_200" style="background-color: lightgrey;">Jadwal Dokter</button>
 						</form>
 					</div>
 				</div>

@@ -70,25 +70,17 @@ require('functions.php');
 			<div class="topnav" id="myTopnav">
 				<nav class="main_nav" style="color: black    ">
 					<ul class="d-flex flex-row align-items-center justify-content-start">
-						<li ><a href="index.html">Home</a></li>
-
-
-						<li ><div class="Registrasi">
-							<button onclick="myFunction()" class="dropbtn" style="font-size: 15px;
-							font-weight: 600;
-							">Registrasi</button>
-							<div id="myDropdown" class="dropdown-content" style="color: #57ccc3">
-								<a href="registrasi Customer.php">Registrasi Customer</a>
-								<a href="registrasi_clinic.html">Registrasi Clinic</a>
-							</div>
-						</div></li>
-						<li><a href="about.html">About Us</a></li>
-						<li><a href="contact.html">Appointment</a></li>
+						<li ><a href="indexcust.php">Home</a></li>
+						<li><a href="about.php">About Us</a></li>
+						<li><a href="datadokter.php">Jadwal Dokter</a></li>
+						<li><a href="appointment.html">Klinik</a></li>
+						<li><a href="appointment.html">Appointment</a></li>
 					<li ><div class="myprofile">
 							<button onclick="myFunction2()" class="dropbtn" style="font-size: 15px;
 							font-weight: 600;
-							">MyProfile</button>
+							" class="active">MyProfile</button>
 							<div id="Dropdown" class="dropdown-content" style="color: #57ccc3">
+
 								<a href="logout.php">Logout</a>
 								
 							</div>
@@ -318,6 +310,6 @@ window.onclick = function(event) {
 </footer>
 
  
-
+	
 </body>
 </html>
