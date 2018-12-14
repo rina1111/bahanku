@@ -1,7 +1,17 @@
+
+
+<?php
+include 'koneksi.php';
+session_start();
+ 
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Input Jadwal Dokter</title>
+  <title>MyClinic</title>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -69,8 +79,8 @@
       <div class="topnav" id="myTopnav">
         <nav class="main_nav" style="color: black    ">
           <ul class="d-flex flex-row align-items-center justify-content-start">
-            <li ><a href="index.html"><i class="fas fa-reply-all" style="font-size: 24px; color: #556B2F"></i></a></li>
-<li class="active"><a href="myprofile.html">My Clinic</a></li>
+            <li ><a href="index_clinic.php"><i class="fas fa-reply-all" style="font-size: 24px; color: #556B2F"></i></a></li>
+<li class="active"><a href="myclinic.html">My Clinic</a></li>
 </ul>
 </nav>
 
@@ -99,6 +109,10 @@
 <br>
 <br>
 <br>
+
+
+<!--------php------>
+
 <div class="container bootstrap snippet">
     <div class="row">
       
@@ -106,21 +120,47 @@
     </div>
     <div class="row">
       <div class="col-sm-3"><!--left col-->
-              
+      <div class="text-center">
+<form method="post">
+ 
+        <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="avatar" alt="avatar" style="border-radius: 5px; border-style: double;">
+        <h6>Upload a photo clinic.</h6>
+        <input type="file" name="foto" class="text-center center-block file-upload">
+        <button class="btn btn-primary" name="save">simpan</button>
+      </div></hr><br>
+  </form> 
 
-      </hr><br>
 
-               
+
+
+  <?php
+ if (isset($_POST['save']))
+
+{
+  
+    $foto=$_FILES['foto']['name'];
+    $lokasi=$_FILES['foto']['tmp_name'];
+    move_uploaded_file($lokasi, "../images/".$foto);
+    
+echo "<meta http-equiv='refresh' content='1;url=myclinic.php?halaman=myclinic'>";
+
+
+}
+?>
+
+
+        
           <div class="panel panel-default">
             <div class="panel-heading">Clinic of Member<i class="fa fa-link fa-1x"></i></div>
-            <div class="panel-body"><a href="http://bootnipets.com">MediSkin</a></div>
+            <div class="panel-body"><a href="index.html">MediSkin</a></div>
           </div>
           
           
           <ul class="list-group">
             <li class="list-group-item text-muted">Activity</i></li>
             
-            <li class="list-group-item text-left"><a href="index.html" style="font-size: 12px;">Daftar Appointment</a></li>
+            <li class="list-group-item text-left"><a href="dataapointment.html" style="font-size: 12px;">Data Appointment</a></li>
+            <li class="list-group-item text-left"><a href="datadokter.html" style="font-size: 12px;">Data Dokter</a></li>
            
           </ul> 
                
@@ -134,79 +174,119 @@
         </div><!--/col-3-->
       <div class="col-sm-9">
             <ul class="nav nav-tabs">
-                <li class="" style="font-size:12px; font-family: times rowman; "><a href="myclinic.php">Data klinik</a></li>
-                 <li class="active" style="font-size:12px; font-family: times rowman; "> <a href="inputjadwal.html">Input Jadwal Dokter</a></li>
-                 <li class=""style="font-size:12px; font-family: times rowman; "><a href="index.html">Logout</a></li>
+                <li class="active" style="font-size:12px; font-family: times rowman; "><a href="myclinic.html">Data klinik</a></li>
+                 <li class="" style="font-size:12px; font-family: times rowman; "> <a href="inputjadwal.html">Input Jadwal Dokter</a></li>
+                 <li class=""style="font-size:12px; font-family: times rowman; "><a href="logout2.php">Logout</a></li>
                
               </ul>
+              <!--------php------>
+<?php
+ if (isset($_SESSION['email'])){ 
+  ?>
 
               
           <div class="tab-content">
             <div class="tab-pane active" id="home">
                 <hr>
-                  <form class="form" action="##" method="post" id="registrationForm">
+                  <form class="form" method="post" id="registrationForm">
+                    
+                    <div class="form-group">
+                          
+                          <div class="col-xs-6">
+                            
+
+                         <span class="form-control" style="background-color: lightblue  ;"><?php echo $_SESSION["klinik"];?></span>
+                              
+                               
+                              
+                              
+                             
+                          </div>
+                      </div>
+
+
+
                       <div class="form-group">
                           
                           <div class="col-xs-6">
+                            
+
+
+                            <span class="form-control" style="background-color: lightblue;"><?php echo $_SESSION["email"];?></span>
                               
-                              <input type="text" class="form-control" name="nip" id="first_name" placeholder="NIP Dokter" title="enter your first name if any.">
+                               
+                              
+                              
+                             
+                          </div>
+                      </div>
+          
+
+
+
+                      <div class="form-group">
+                          
+                          <div class="col-xs-6">
+                            
+
+
+                            <span class="form-control" style="background-color: lightblue;"><?php echo $_SESSION["telepon"];?></span>
+                              
+                               
+                              
+                              
+                             
+                          </div>
+                      </div>
+          
+                    
+          
+                      <div class="form-group">
+                          <div class="col-xs-6">
+                             <span class="form-control" style="background-color: lightblue;"><?php echo $_SESSION["alamat"];?></span>
+                            
+                          </div>
+                      </div>
+                     <div class="form-group">
+                          <div class="col-xs-6">
+                             <textarea rows="5" class="form-control" style="background-color: lightblue;"><?php echo $_SESSION["jadwal_klinik"];?></textarea>
+                            
                           </div>
                       </div>
                      
-                      
-          
-                      <div class="form-group">
-                          
-                          <div class="col-xs-6">
-                             
-                              <input type="text" class="form-control" name="nama_dokter" id="phone" placeholder="Nama Dokter" title="enter your phone number if any.">
-                          </div>
-                      </div>
-          
-                          <div class="form-group">
-                          
-                          <div class="col-xs-6">
-                             
-                              <input type="text" class="form-control" name="Ruangan" id="phone" placeholder="Ruangan" title="enter your phone number if any.">
-                          </div>
-                      </div>
-                      <div class="form-group">
-                      <div class="form-group">
-                          
-                          <div class="col-xs-6">
-                             
-                              <input type="text" class="form-control" name="Hari" id="phone" placeholder="Hari" title="enter your phone number if any.">
-                          </div>
-                      </div>
-                          
-
-                        <div class="form-group">
-                          
-                          <div class="col-xs-6">
-                             
-                              <input type="text" class="form-control" name="jam" id="phone" placeholder="Jam" title="enter your phone number if any.">
-                          </div>
-                      </div>
-
-                           <div class="col-md-6">
-                                <br>
-                                <button style="background-color:#5F9EA0  " type="submit"><i class="glyphicon glyphicon-ok-sign"></i> Save</button>
-                                <button style="background-color:lightgrey; " type="reset"><i class="glyphicon glyphicon-repeat"></i> Reset</button>
-                            </div>
-                      </div>
-                </form>
               
               <hr>
             
              
               </div><!--/tab-pane-->
-             
+             <?php }?>
                
           </div><!--/tab-content-->
 
         </div><!--/col-9-->
     </div><!--/row-->
- 
+    <script type="text/javascript">
+      $(document).ready(function() {
+
+    
+    var readURL = function(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('.avatar').attr('src', e.target.result);
+            }
+    
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+    
+
+    $(".file-upload").on('change', function(){
+        readURL(this);
+    });
+});
+    </script>
 
 
 </body>
