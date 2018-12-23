@@ -1,10 +1,19 @@
+
+
+<?php
+include 'koneksi.php';
+session_start();
+ 
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Registrasi Klinik</title>
-  <meta charset="utf-8">
+  <title>Jadwal Dokter</title>
+   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="description" content="Dr PRO template project">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="styles/bootstrap-4.1.2/bootstrap.min.css">
   <link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -23,23 +32,33 @@
   <link rel="stylesheet" type="text/css" href="styles/main_styles.css">
   <link rel="stylesheet" type="text/css" href="styles/responsive.css">
 
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ==" crossorigin=""/>
-  <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js" integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw==" crossorigin=""></script>
-
   <link rel="stylesheet" type="text/css" href="styles/loginsignup.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="css/cardku.css">
+<link rel="stylesheet" type="text/css" href="css/footer.css">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+<link rel="icon" href="images/favicon.ico" type="image/x-icon">
 
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<!------ Include the above in your HEAD tag ---------->
+
+
+<!------ Include the above in your HEAD tag ---------->
+ 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 </head>
 
   
-      <link rel="stylesheet" href="css/tableku.css">
+      <link rel="stylesheet" href="css/cardku2.css">
 
   
-
+<link href="css/bootstrap.min.css" rel="stylesheet">
 
 
 <body style="background-image: url()">
@@ -75,66 +94,6 @@
 
 
 
-            <style>
-            .dropbtn {
-              background-color: white;
-              color:  black;
-
-              font-size: 15px;
-              border: none;
-              cursor: pointer;
-            }
-
-            .dropbtn:hover, .dropbtn:focus {
-              background-color: white;
-              color:  #57ccc3;
-            }
-
-
-            .dropdown {
-              position: relative;
-              display: inline-block;
-            }
-
-            .dropdown-content {
-              display: none;
-              position: absolute;
-              background-color: white;
-              min-width: 160px;
-              overflow: auto;
-              
-            }
-
-            .dropdown-content a {
-              color: black;
-              padding: 12px 16px;
-              text-decoration: none;
-              display: block;
-            }
-
-            .dropdown-content2 {
-              display: none;
-              position: absolute;
-              background-color: white;
-              min-width: 160px;
-              overflow: auto;
-              
-            }
-
-            .dropdown-content2 a {
-              color: black;
-              padding: 12px 16px;
-              text-decoration: none;
-              display: block;
-            }
-
-
-            .dropdown a:hover {background-color:  white;}
-
-            .show {display: block;}
-          </style>
-   
-
 
 
 </nav>
@@ -169,45 +128,46 @@
 <br>
 <br>
 <br>
+<div class="col-12">
+                    <h2 style=" text-align: center;
+    border-bottom:6px double lightblue;
+    border-width:5px;   "></h2><hr>
+                </div>
+
+<?php $nomor=1; ?>
+                  <?php $ambil=$koneksi->query("SELECT * FROM tb_dokter  ");?>
+                  <?php while ($pecah=$ambil->fetch_assoc()){?> 
   <section>
-<li style="font-size: 36px; text-align: center; font-family: times rowman "> Jadwal Dokter</li>
   <!--for demo wrap-->
-  <div class="tbl-header">
-    <table cellpadding="0" cellspacing="0" border="0">
-      <thead>
-        
-        <tr>
+  
+    
+  
  
-          <th>Id</th>
-          <th>NIP Dokter</th>
-          <th>Nama Dokter</th>
-          <th>Klinik</th>
-          <th>Jadwal Dokter</th>
-        </tr> <hr>
-      </thead>
-    </table>
-  </div>
-  <div class="tbl-content">
-    <table cellpadding="0" cellspacing="0" border="0">
-      <tbody>
-        <tr>
-          <td>1</td>
-          <td>001898790654</td>
-          <td>Dr. Novi SpKk</td>
-          <td>Erha Klinik</td>
-          <td>Senin : 09.00 - 11.00<hr>
-            Rabu : 09.00 - 11.00
+  
 
-           </td>
-        </tr>
-       
-        
-      </tbody>
-    </table>
-  </div>
+ 
+          <div class="col-12 col-md-3 col-md-3">
+                <figure class="snip1336">
+  <img src="images/id.png"  alt="sample87" />
+  <figcaption>
+    <img src="img_db/<?php echo $pecah['gambar'];?>"  alt="profile-sample4" class="profile" />
+    <h4><?php echo $pecah['nama_dokter'];?></h4><hr>
+     <p style="text-align: justify; font-size: 12px; color: white;"><span>Klinik: </span><?php echo $pecah['klinik_dokter'];?></p><hr>
+      <p style="text-align: justify; font-size: 12px; color: white;"><span>Ruangan: </span><?php echo $pecah['ruangan'];?></p><hr>
+   <p style="text-align: justify; font-size: 12px; color: white;"><?php echo $pecah['alamat_dokter'];?></p><hr>
+    <p style="text-align: justify; font-size: 12px; color: white;"><?php echo $pecah['jadwal_dokter'];?></p>
+  
+  </figcaption>
+</figure>
 
+</div>
+
+                
+     
 </section>
 
+<?php $nomor++;?>
+                <?php }?>
 <!-- follow me template -->
 
   <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>

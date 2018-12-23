@@ -85,40 +85,18 @@
 			<div class="topnav" id="myTopnav">
 				<nav class="main_nav" style="color: black    ">
 					<ul class="d-flex flex-row align-items-center justify-content-start">
-						<li class="active" ><a href="index.html">Home</a></li>
-
-
-						<li ><div class="Registrasi">
-							<button onclick="myFunction()" class="dropbtn" style="font-size: 15px;
-							font-weight: 600;
-							">Registrasi</button>
-							<div id="myDropdown" class="dropdown-content" style="color: #57ccc3">
-								<a href="registrasi Customer.php">Registrasi Customer</a>
-								<a href="registrasi_clinic.php">Registrasi Klinik</a>
-									
-
-
-							</div>
-						</div></li>
-
-
-
-
-<li ><div class="Login">
+						<li class="active" ><a href="index.php">Home</a></li>
+						
+						<li><a href="registrasi_clinic.php">Register for Clinic</a></li>
+							<li ><div class="Login">
 							<button onclick="myFunction2()" class="dropbtn" style="font-size: 15px;
 							font-weight: 600;
 							">Login</button>
 							<div id="Dropdown" class="dropdown-content2" style="color: #57ccc3">
-								<a href="login.php">Login Customer</a>
-								<a href="login_klinik.php">Login Klinik</a>
-
-
+								<a href="login.php">Login as doctor</a>
+								<a href="login_klinik.php">Login as clinic</a>
 							</div>
 						</div></li>
-
-
-
-
 
 
 						<style>
@@ -177,28 +155,7 @@
 
 						.show {display: block;}
 					</style>
-					<script>
-/* When the user clicks on the button, 
-toggle between hiding and showing the dropdown content */
-function myFunction() {
-	document.getElementById("myDropdown").classList.toggle("show");
-}
-
-// Close the dropdown if the user clicks outside of it
-window.onclick = function(event) {
-	if (!event.target.matches('.dropbtn')) {
-
-		var dropdowns = document.getElementsByClassName("dropdown-content2");
-		var i;
-		for (i = 0; i < dropdowns.length; i++) {
-			var openDropdown = dropdowns[i];
-			if (openDropdown.classList.contains('show')) {
-				openDropdown.classList.remove('show');
-			}
-		}
-	}
-}
-</script>
+					
 
 	<script>
 /* When the user clicks on the button, 
@@ -224,8 +181,9 @@ window.onclick = function(event) {
 </script>
 
 <li><a href="about.php">About Us</a></li>
-<li><a href="datadokter.html">Jadwal Dokter</a></li>
-<li><a href="Klinik.html">Klinik</a></li>
+<li><a href="datadokter.php">Doctors</a></li>
+<li><a href="Clinic.html">Clinic</a></li>
+
 
 
 </ul>
@@ -268,7 +226,7 @@ window.onclick = function(event) {
 				
 				<!-- Slide -->
 				<div class="owl-item">
-					<div class="background_image" style="background-image:url(images/qq5.jpg)"></div>
+					<div class="background_image" style="background-image:url(images/woman.jpg)"></div>
 					<div class="home_container">
 						<div class="container">
 							<div class="row">
@@ -298,8 +256,7 @@ window.onclick = function(event) {
 							<div class="row">
 								<div class="col">
 									<div class="home_content" style="float: right">
-										<div class="home_subtitle"></div>
-										<div class="home_title"></div>
+										<div class="home_subtitle"></divwoman										<div class="home_title"></div>
 										<div class="home_text">
 											<p></p>
 										</div>

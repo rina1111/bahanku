@@ -67,28 +67,18 @@ session_start();
 			<div class="topnav" id="myTopnav">
 				<nav class="main_nav" style="color: black    ">
 					<ul class="d-flex flex-row align-items-center justify-content-start">
-						<li ><a href="index.html">Home</a></li>
-						<li class="active" ><a href="registrasi_clinic">Registrasi Klinik</a></li>
-
-
-
-
-
-
-						<li ><div class="Login">
+						<li ><a href="index.php">Home</a></li>
+						
+						<li class="active"><a href="registrasi_clinic.php">Register for Clinic</a></li>
+							<li ><div class="Login">
 							<button onclick="myFunction2()" class="dropbtn" style="font-size: 15px;
 							font-weight: 600;
 							">Login</button>
 							<div id="Dropdown" class="dropdown-content2" style="color: #57ccc3">
-								<a href="login.html">Login Customer</a>
-								<a href="reg_clinic.html">Login Klinik</a>
-								
+								<a href="login.php">Login as doctor</a>
+								<a href="login_klinik.php">Login as clinic</a>
 							</div>
 						</div></li>
-
-
-
-
 
 
 						<style>
@@ -127,8 +117,7 @@ session_start();
 							text-decoration: none;
 							display: block;
 						}
-
-						.dropdown-content2 {
+							.dropdown-content2 {
 							display: none;
 							position: absolute;
 							background-color: white;
@@ -144,16 +133,17 @@ session_start();
 							display: block;
 						}
 
-
 						.dropdown a:hover {background-color:  white;}
 
 						.show {display: block;}
 					</style>
-					<script>
+					
+
+	<script>
 /* When the user clicks on the button, 
 toggle between hiding and showing the dropdown content */
-function myFunction() {
-	document.getElementById("myDropdown").classList.toggle("show");
+function myFunction2() {
+	document.getElementById("Dropdown").classList.toggle("show");
 }
 
 // Close the dropdown if the user clicks outside of it
@@ -172,32 +162,10 @@ window.onclick = function(event) {
 }
 </script>
 
-<script>
-/* When the user clicks on the button, 
-toggle between hiding and showing the dropdown content */
-function myFunction2() {
-	document.getElementById("Dropdown").classList.toggle("show");
-}
+<li><a href="about.php">About Us</a></li>
+<li><a href="datadokter.php">Doctors</a></li>
+<li><a href="Clinic.html">Clinic</a></li>
 
-// Close the dropdown if the user clicks outside of it
-window.onclick = function(event) {
-	if (!event.target.matches('.dropbtn')) {
-
-		var dropdowns = document.getElementsByClassName("dropdown-content2");
-		var i;
-		for (i = 0; i < dropdowns.length; i++) {
-			var openDropdown = dropdowns[i];
-			if (openDropdown.classList.contains('show')) {
-				openDropdown.classList.remove('show');
-			}
-		}
-	}
-}
-</script>
-
-
-<li><a href="about.html">About Us</a></li>
-<li><a href="appointment.html">Appointment</a></li>
 </ul>
 </nav>
 
@@ -458,7 +426,7 @@ p {
 									<span><i class="fab fa-amazon-pay" style="float: center; "> </i></span>
 									<label class="control-label"></label>
 									<select class="form-control" name="berlangganan" class="required" style="font-size: 12px;">
-										<option disabled="disabled" selected="selected"">Berlangganan</option>
+										<option disabled="disabled" selected="selected" style="font-size: 12px;">Berlangganan</option>
 
 										<option value="Rp.69.999">Rp.69,999/bulan</option>
 										<option value="Rp.124,999">Rp.124,999/2 bulan</option>

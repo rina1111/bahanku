@@ -1,14 +1,17 @@
-
-
 <?php
-include 'koneksi.php';
 session_start();
  
+include 'koneksi.php';
+
+
 
 
 ?>
 
-<!DOCTYPE html>
+
+
+
+<!D<!DOCTYPE html>
 <html lang="en">
 <head>
   <title>MyClinic</title>
@@ -80,7 +83,7 @@ session_start();
         <nav class="main_nav" style="color: black    ">
           <ul class="d-flex flex-row align-items-center justify-content-start">
            
-            <li class="active"><a href="myclinic.php">My Clinic</a></li>
+            <li class="active"><a href="updatedata.php">Update Klinik</a></li>
             </ul>
         </nav>
 
@@ -109,10 +112,6 @@ session_start();
 <br>
 <br>
 <br>
-
-
-<!--------php------>
-
 <div class="container bootstrap snippet">
     <div class="row">
       
@@ -151,124 +150,121 @@ session_start();
         </div><!--/col-3-->
       <div class="col-sm-9">
             <ul class="nav nav-tabs">
-                <li class="active" style="font-size:12px; font-family: times rowman; "><a href="myclinic.html">Data klinik</a></li>
-                 <li class="" style="font-size:12px; font-family: times rowman; "> <a href="inputjadwal.php">Input Jadwal Dokter</a></li>
+             
+                 <li class="active" style="font-size:12px; font-family: times rowman; "> <a href="updatedata.php">Update Klinik</a></li>
                  <li class=""style="font-size:12px; font-family: times rowman; "><a href="logout2.php">Logout</a></li>
                
               </ul>
-              <!--------php------>
-<?php
- if (isset($_SESSION['level'])){ 
-  ?>
-
               
           <div class="tab-content">
             <div class="tab-pane active" id="home">
                 <hr>
-                  <form class="form" method="post" id="registrationForm">
-                    
-                    <div class="form-group">
-                          
-                          <div class="col-xs-6">
-                            
-
-                         <span class="form-control" style="background-color: lightblue  ;"><?php echo $_SESSION["klinik"];?></span>
-                              
-                               
-                              
-                              
-                             
-                          </div>
-                      </div>
-
-
-
+                  <form class="form" action="##" method="post" id="registrationForm" enctype="multipart/form-data">
                       <div class="form-group">
                           
                           <div class="col-xs-6">
-                            
-
-
-                            <span class="form-control" style="background-color: lightblue;"><?php echo $_SESSION["email"];?></span>
                               
-                               
-                              
-                              
-                             
-                          </div>
-                      </div>
-          
-
-
-
-                      <div class="form-group">
-                          
-                          <div class="col-xs-6">
-                            
-
-
-                            <span class="form-control" style="background-color: lightblue;"><?php echo $_SESSION["telepon"];?></span>
-                              
-                               
-                              
-                              
-                             
-                          </div>
-                      </div>
-          
-                    
-          
-                      <div class="form-group">
-                          <div class="col-xs-6">
-                             <span class="form-control" style="background-color: lightblue;"><?php echo $_SESSION["alamat"];?></span>
-                            
-                          </div>
-
-                      </div>
-                     <div class="form-group">
-                          <div class="col-xs-6">
-                             <textarea rows="5" class="form-control" style="background-color: lightblue;"><?php echo $_SESSION["jadwal_klinik"];?></textarea>
-                            
+                              <input type="text" class="form-control" name="klinik" id="first_name" placeholder="Nama Klinik" title="enter your first name if any.">
                           </div>
                       </div>
                      
-             <div class="form-group">
+                      
+          
+                    
+                      
+                      <div class="form-group">
+                          
                           <div class="col-xs-6">
-                       <a href=updatedata.php?halaman=update&id=<?php echo $_SESSION['email'];?>" class="btn-danger btn">update</a>
+                             
+                              <input type="text" class="form-control" name="tlp" id="phone" placeholder="Telepon" title="enter your phone number if any.">
                           </div>
                       </div>
+                          
+
+                        <div class="form-group">
+                          
+                          <div class="col-xs-6">
+                             <div>
+                              <input type="text" class="form-control" name="alamat" id="phone" placeholder="Alamat Klinik" title="enter your phone number if any. "> 
+                            </div>
+                          </div>
+                      </div>
+                                    <!--------php------>
+
+  <?php
+ if (isset($_SESSION['email'])){ 
+  ?>
+                      <div class="form-group">
+                      <div class="col-md-6">
+                           <input type="text" class="form-control" name="tlp" id="phone" readonly="" placeholder=<?php echo $_SESSION["berlangganan"];?> >
+                             
+                    
+                </div>               
+                            </div>
+
+                            <?php }?>
+                       <div class="form-group">
+                      <div class="col-xs-6">
+                             <div>
+                              <textarea class="form-control" name="jadwal_klinik" placeholder="Jadwal Klinik" rows="5"></textarea>
+                            </div>
+                          </div>
+                      </div>
+                     
+                          
+                      <div class="form-group">
+                      <div class="col-xs-6">
+                             <div>
+                           <input type="file" name="foto" placeholder="upload foto" class="form-control">
+                            </div>
+                          </div>
+                      </div>
+                     
+                         
+                           <div class="col-md-6">
+                                <br>
+                                <button name="save" style="background-color:#5F9EA0  " type="submit" ><i class="glyphicon glyphicon-ok-sign"></i> Save</button>
+                             
+                            </div>
+                      </div>
+                </form>
+                 <?php 
+
+if (isset($_POST['save']))
+{
+  
+  $klinik          = $_POST['klinik'];
+$email=$_SESSION['email'];
+$telepon            = $_POST['tlp'];
+$alamat             = $_POST['alamat'];
+$jadwal_klinik             = $_POST['jadwal_klinik'];
+
+
+  $gambar=$_FILES['foto']['name'];
+  $lokasi=$_FILES['foto']['tmp_name'];
+  move_uploaded_file($lokasi, "img_db/".$gambar);
+   // query SQL untuk insert data
+$query="UPDATE data_clinic SET klinik='$klinik',telepon='$telepon',alamat='$alamat',jadwal_klinik='$jadwal_klinik',foto='$gambar' where email='$email'";
+mysqli_query($koneksi, $query);
+   
+    
+
+ echo"<script>alert('Data telah terupdate');</script>";
+
+}
+?>
+
               <hr>
             
              
               </div><!--/tab-pane-->
-             <?php }?>
+             
                
           </div><!--/tab-content-->
 
         </div><!--/col-9-->
     </div><!--/row-->
-    <script type="text/javascript">
-      $(document).ready(function() {
-
-    
-    var readURL = function(input) {
-        if (input.files && input.files[0]) {
-            var reader = new FileReader();
-
-            reader.onload = function (e) {
-                $('.avatar').attr('src', e.target.result);
-            }
-    
-            reader.readAsDataURL(input.files[0]);
-        }
-    }
-    
-
-    $(".file-upload").on('change', function(){
-        readURL(this);
-    });
-});
-    </script>
+ 
 
 
 </body>

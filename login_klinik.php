@@ -66,28 +66,11 @@ session_start();
 			<div class="topnav" id="myTopnav">
 				<nav class="main_nav" style="color: black    ">
 					<ul class="d-flex flex-row align-items-center justify-content-start">
-						<li ><a href="index.php">Home</a></li>
-
-
-						<li ><div class="Registrasi">
-							<button onclick="myFunction()" class="dropbtn" style="font-size: 15px;
-							font-weight: 600;
-							">Registrasi</button>
-							<div id="myDropdown" class="dropdown-content" style="color: #57ccc3">
-								<a href="registrasi Customer.php">Registrasi Customer</a>
-								<a href="registrasi_clinic.php">Registrasi Clinic</a>
-
-
-							</div>
-						</div></li>
-						<li class="active"><a href="login.php">Login Klinik</a></li>
-
-
-
-
-
-
-
+						<li class="active" ><a href="index.php">Home</a></li>
+						
+						<li><a href="registrasi_clinic.php">Register for Clinic</a></li>
+						
+						<li class="active"><a href="login_klinik.php">Login</a></li>
 
 						<style>
 						.dropbtn {
@@ -145,28 +128,7 @@ session_start();
 
 						.show {display: block;}
 					</style>
-					<script>
-/* When the user clicks on the button, 
-toggle between hiding and showing the dropdown content */
-function myFunction() {
-	document.getElementById("myDropdown").classList.toggle("show");
-}
-
-// Close the dropdown if the user clicks outside of it
-window.onclick = function(event) {
-	if (!event.target.matches('.dropbtn')) {
-
-		var dropdowns = document.getElementsByClassName("dropdown-content2");
-		var i;
-		for (i = 0; i < dropdowns.length; i++) {
-			var openDropdown = dropdowns[i];
-			if (openDropdown.classList.contains('show')) {
-				openDropdown.classList.remove('show');
-			}
-		}
-	}
-}
-</script>
+					
 
 	<script>
 /* When the user clicks on the button, 
@@ -191,10 +153,10 @@ window.onclick = function(event) {
 }
 </script>
 
-
-
-<li><a href="about.html">About Us</a></li>
-<li><a href="contact.html">Appointment</a></li>
+<li><a href="about.php">About Us</a></li>
+<li><a href="datadokter.php">Doctors</a></li>
+<li><a href="Clinic.html">Clinic</a></li>
+<li><a href="appointment.php">Appointment</a></li>
 </ul>
 </nav>
 
@@ -258,20 +220,20 @@ window.onclick = function(event) {
 				<div class="container">
 					<div class="signin-content">
 						<div class="signin-image">
-							<figure><img src="images/new.png" alt="sing up image"></figure>
+							<figure><img src="images/id.png" alt="sing up image" style="border-image: inherit; border-style: double;"></figure>
 							<a href="registrasi customer.html" class="signup-image-link">Create an account clinic</a>
 						</div>
 
-						<div class="signin-form">
-							<h2 class="form-title">Login Klinik</h2>
-							<form method="POST" class="register-form" id="login-form">
+						<div class="signin-form" style=" padding: 15px; border-color: lightgrey;">
+							<h2 class="form-title" style="font-family: timesrowman">Login as Clinic</h2>
+							<form method="POST" class="register-form" id="login-form"  style="border-radius: 10px;">
 								<div class="form-group">
 									<label for="your_name"><i class="zmdi zmdi-account material-icons-name"></i></label>
-									<input type="text" name="email" id="Email" placeholder="Email"/>
+									<input type="text" name="email" id="Email" placeholder="Email" style="border-radius: 10px;" />
 								</div>
 								<div class="form-group">
 									<label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
-									<input type="password" name="password" id="your_pass" placeholder="Password"/>
+									<input type="password" name="password" id="your_pass" placeholder="Password" style="border-radius: 10px;"/>
 								</div>
 								<div class="form-group">
 									<input type="checkbox" name="remember-me" id="remember-me" class="agree-term" />
@@ -303,6 +265,9 @@ window.onclick = function(event) {
                                           $_SESSION['telepon']=$klinik['telepon'];
                                            $_SESSION['alamat']=$klinik['alamat'];
                                          	  $_SESSION['jadwal_klinik']=$klinik['jadwal_klinik'];
+                                         	   $_SESSION['berlangganan']=$klinik['berlangganan'];
+                                         	  $_SESSION['level']=$klinik['level'];
+                                         
                                          
                                        echo"<script>alert('Anda berhasil Login');</script>";
                                        echo "<meta http-equiv='refresh'content='1;url=myclinic.php'>";

@@ -1,7 +1,7 @@
 <?php
 include 'koneksi.php';
 session_start();
-require('functions.php');
+
 
 
 ?>
@@ -74,7 +74,7 @@ require('functions.php');
 						<li><a href="about.php">About Us</a></li>
 						<li><a href="datadokter.php">Jadwal Dokter</a></li>
 						<li><a href="appointment.html">Klinik</a></li>
-						<li><a href="appointment.html">Appointment</a></li>
+						<li><a href="appointment.php">Appointment</a></li>
 					<li ><div class="myprofile">
 							<button onclick="myFunction2()" class="dropbtn" style="font-size: 15px;
 							font-weight: 600;
