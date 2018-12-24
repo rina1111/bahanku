@@ -87,13 +87,13 @@
 					<ul class="d-flex flex-row align-items-center justify-content-start">
 						<li class="active" ><a href="index.php">Home</a></li>
 						
-						<li><a href="registrasi_clinic.php">Register for Clinic</a></li>
+						
 							<li ><div class="Login">
 							<button onclick="myFunction2()" class="dropbtn" style="font-size: 15px;
 							font-weight: 600;
-							">Login</button>
+							">Register & Login</button>
 							<div id="Dropdown" class="dropdown-content2" style="color: #57ccc3">
-								<a href="login.php">Login as doctor</a>
+								<a href="berlangganan.php">Register for Clinic</a>
 								<a href="login_klinik.php">Login as clinic</a>
 							</div>
 						</div></li>
@@ -183,6 +183,7 @@ window.onclick = function(event) {
 <li><a href="about.php">About Us</a></li>
 <li><a href="datadokter.php">Doctors</a></li>
 <li><a href="klinik.php">Clinic</a></li>
+<li><a href="confrim_payment.php">Confrim Payment</a></li>
 
 
 

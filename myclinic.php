@@ -143,7 +143,7 @@ session_start();
             
             <li class="list-group-item text-left"><a href="dataapointment.html" style="font-size: 12px;">Data Appointment</a></li>
             <li class="list-group-item text-left"><a href="table_dokter.php" style="font-size: 12px;">Lihat Data Dokter</a></li>
-             <li class="list-group-item text-left"><a href="dataklinik.php" style="font-size: 12px;">Lihat Daftar Klinik</a></li>
+             <li class="list-group-item text-left"><a href="klinik.php" style="font-size: 12px;">Lihat Daftar Klinik</a></li>
           </ul> 
                
         

@@ -3,9 +3,6 @@
 <?php
 include 'koneksi.php';
 session_start();
- 
-
-
 ?>
 
 <!DOCTYPE html>
@@ -57,9 +54,6 @@ session_start();
   
       <link rel="stylesheet" href="css/cardku2.css">
 
-  
-<link href="css/bootstrap.min.css" rel="stylesheet">
-
 
 <body style="background-image: url()">
 
@@ -72,9 +66,12 @@ session_start();
 
       <!-- Logo -->
       <div class="logo">
-        <a href="#">
-          <div style="color: #5F9EA0  ">MediSkin<span style="color:#BDB76B ">Appointment</span></div><hr>
-          <div style="color: #556B2F">Make An Appointment <span style="color: #556B2F"> with your favorite clinic!</span></div><hr>
+        <br>
+
+        <a href="index.php">
+
+          <div style="color: #5F9EA0 ;">MediSkin<span style="color:#BDB76B ">Appointment</span></div><hr>
+          <div style="color: #556B2F; font-size: 14px;">Make An Appointment <span style="color: #556B2F"> with your favorite clinic!</span></div><hr>
           
         </a>
       </div>
@@ -83,24 +80,112 @@ session_start();
       <div class="topnav" id="myTopnav">
         <nav class="main_nav" style="color: black    ">
           <ul class="d-flex flex-row align-items-center justify-content-start">
-           
-           
+            <li class="" ><a href="index.php">Home</a></li>
+            
+            
+              <li ><div class="Login">
+              <button onclick="myFunction2()" class="dropbtn" style="font-size: 15px;
+              font-weight: 600;
+              ">Register & Login</button>
+              <div id="Dropdown" class="dropdown-content2" style="color: #57ccc3">
+                <a href="berlangganan.php">Register for Clinic</a>
+                <a href="login_klinik.php">Login as clinic</a>
+              </div>
+            </div></li>
+
+
+            <style>
+            .dropbtn {
+              background-color: white;
+              color:  black;
+
+              font-size: 15px;
+              border: none;
+              cursor: pointer;
+            }
+
+            .dropbtn:hover, .dropbtn:focus {
+              background-color: white;
+              color:  #57ccc3;
+            }
+
+
+            .dropdown {
+              position: relative;
+              display: inline-block;
+            }
+
+            .dropdown-content {
+              display: none;
+              position: absolute;
+              background-color: white;
+              min-width: 160px;
+              overflow: auto;
+              
+            }
+
+            .dropdown-content a {
+              color: black;
+              padding: 12px 16px;
+              text-decoration: none;
+              display: block;
+            }
+              .dropdown-content2 {
+              display: none;
+              position: absolute;
+              background-color: white;
+              min-width: 160px;
+              overflow: auto;
+              
+            }
+
+            .dropdown-content2 a {
+              color: black;
+              padding: 12px 16px;
+              text-decoration: none;
+              display: block;
+            }
+
+            .dropdown a:hover {background-color:  white;}
+
+            .show {display: block;}
+          </style>
+          
+
+  <script>
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction2() {
+  document.getElementById("Dropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+
+<li><a href="about.php">About Us</a></li>
+<li class="active"><a href="datadokter.php">Doctors</a></li>
+<li><a href="klinik.php">Clinic</a></li>
+<li><a href="confrim_payment.php">Confrim Payment</a></li>
 
 
 
-
-
-         
-
-
-
-
-
-</nav>
+</ul>
+</nav>  
 
 </div>
-
-
 <div class="header_extra d-flex flex-row align-items-center justify-content-end ml-auto">
 
   <!-- Work Hourse -->

@@ -1,7 +1,18 @@
+<?php
+session_start();
+ 
+include 'koneksi.php';
+
+
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>MyProfile</title>
+	<title>Confrim Payment</title>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="description" content="Dr PRO template project">
@@ -56,15 +67,113 @@
 			</div>
 
 			<!-- Main Navigation -->
-					<div class="topnav" id="myTopnav">
+			<div class="topnav" id="myTopnav">
 				<nav class="main_nav" style="color: black    ">
 					<ul class="d-flex flex-row align-items-center justify-content-start">
-						<li ><a href="index.html"><i class="fas fa-reply-all" style="font-size: 24px; color: #556B2F"></i></a></li>
-						<li class="active "><a href="Payment.html">Payment Detail</a></li>
+						<li class="" ><a href="index.php">Home</a></li>
 						
+						
+							<li ><div class="Login">
+							<button onclick="myFunction2()" class="dropbtn" style="font-size: 15px;
+							font-weight: 600;
+							">Register & Login</button>
+							<div id="Dropdown" class="dropdown-content2" style="color: #57ccc3">
+								<a href="berlangganan.php">Register for Clinic</a>
+								<a href="login_klinik.php">Login as clinic</a>
+							</div>
+						</div></li>
+
+
+						<style>
+						.dropbtn {
+							background-color: white;
+							color:  black;
+
+							font-size: 15px;
+							border: none;
+							cursor: pointer;
+						}
+
+						.dropbtn:hover, .dropbtn:focus {
+							background-color: white;
+							color:  #57ccc3;
+						}
+
+
+						.dropdown {
+							position: relative;
+							display: inline-block;
+						}
+
+						.dropdown-content {
+							display: none;
+							position: absolute;
+							background-color: white;
+							min-width: 160px;
+							overflow: auto;
+							
+						}
+
+						.dropdown-content a {
+							color: black;
+							padding: 12px 16px;
+							text-decoration: none;
+							display: block;
+						}
+							.dropdown-content2 {
+							display: none;
+							position: absolute;
+							background-color: white;
+							min-width: 160px;
+							overflow: auto;
+							
+						}
+
+						.dropdown-content2 a {
+							color: black;
+							padding: 12px 16px;
+							text-decoration: none;
+							display: block;
+						}
+
+						.dropdown a:hover {background-color:  white;}
+
+						.show {display: block;}
+					</style>
+					
+
+	<script>
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction2() {
+	document.getElementById("Dropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+	if (!event.target.matches('.dropbtn')) {
+
+		var dropdowns = document.getElementsByClassName("dropdown-content");
+		var i;
+		for (i = 0; i < dropdowns.length; i++) {
+			var openDropdown = dropdowns[i];
+			if (openDropdown.classList.contains('show')) {
+				openDropdown.classList.remove('show');
+			}
+		}
+	}
+}
+</script>
+
+<li><a href="about.php">About Us</a></li>
+<li><a href="datadokter.php">Doctors</a></li>
+<li><a href="klinik.php">Clinic</a></li>
+<li class="active"><a href="confrim_payment.php">Confrim Payment</a></li>
+
+
+
 </ul>
-</nav>
- 
+</nav>	
 
 </div>
 
@@ -117,31 +226,65 @@
       <br>
       <br>
       <br>
-      <img id="product" src="images/new2.png" style="width: 100%;"><hr>
+      <img id="product" src="images/new.png" style="width: 100%;"><hr>
 
-
+<br>
+     <p>Konfirmasi Pembayaranmu Disini Beserta Bukti Transfer</p>
+     <hr>
 
       <div id="price">
-     <p>Rp.69,999</p>
-     <br>
-<img src="images/Mandiri.png">
+
      
 
       </div>
     </div>
 
-    <div id="payment">
+    <div id="payment" >
 
-      	<input id="nama" type="text" name="name" requierd="true" maxlength="50" placeholder="Nama "style="border-radius: 7px; border-style: double;font-size: 11px"><hr>
+      <form id="checkout" method="post" enctype="multipart/form-data">
 
-      	<input id="email" type="text" name="email" requierd="true" maxlength="50" placeholder="Email "style="border-radius: 7px; border-style: double;font-size: 11px"><hr>
-      <form id="checkout"style="border-style: double; font-family: times rowman; text-align: center; background-color: lightgrey;">
+         <input id="nama" type="text" name="nama" requierd="true" maxlength="50" placeholder="Nama "style="border-radius: 7px; border-style: double;font-size: 11px">
 
-        <p style="font-size:12px; font-family: times rowman; " >Silahkan melakukan Pembayaran Sebesar <span style="border-bottom: solid;"> Rp.69,999</span><hr> ke Rekening Mandiri 3333-01000-27894 a.n     PT.Mediskinku</p>
+        <input id="rekening" type=text  name="rek" requierd="true" placeholder="No Rekening"style="border-radius: 7px; border-style: double; font-size: 11px">
+
+       <input id="tel" type="text" name="total" requierd="true" maxlength="50" placeholder="Total Transfer" style="border-radius: 7px; border-style: double;font-size: 11px">
+
+       <input id="tel" type="text" name="tel" requierd="true" maxlength="50" placeholder="Telepon" style="border-radius: 7px; border-style: double;font-size: 11px">
+
+ <input id="tel" type="text" name="tgl" requierd="true" maxlength="50" placeholder="Tanggal Pembayaran" style="border-radius: 7px; border-style: double; font-size: 11px;">
+       <input id="tel" type="file" name="bukti" requierd="true" maxlength="50" placeholder="Tanggal Pembayaran" style="border-radius: 7px; border-style: double; font-size: 11px;">
+       
        
 
+        <button name="save" type="submit" style="color: white;"> Confrim Payment</button>
       </form>
-       <button style="color: white;"><a href=""></a> Pay now</button>
+       <?php 
+ 
+if (isset($_POST['save']))
+{
+ 
+
+	$tgl=date("Y-m-d");
+  $bukti=$_FILES['bukti']['name'];
+  $lokasi=$_FILES['bukti']['tmp_name'];
+  move_uploaded_file($lokasi, "img_db/".$bukti);
+ 
+// menyimpan data id kedalam variabel
+// query SQL untuk insert data
+
+		$koneksi->query("INSERT INTO konfirmasi(nama,rek,tot,tel,tgl,bukti)VALUES ('$_POST[nama]','$_POST[rek]','$_POST[total]','$_POST[tel]','$_POST[tgl]','$bukti')");
+		
+echo "<script>alert('Terimakasih'); </script>";
+echo "<meta http-equiv='refresh' content='1;url=registrasi_clinic.php?halaman=produk'>";
+}
+
+?>
+
+
+    
+
+
+
     </div>
 
   </div>

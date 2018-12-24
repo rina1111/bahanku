@@ -1,7 +1,19 @@
+<?php
+session_start();
+ 
+include 'koneksi.php';
+
+
+
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>MyProfile</title>
+	<title>Payment</title>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="description" content="Dr PRO template project">
@@ -56,135 +68,12 @@
 			</div>
 
 			<!-- Main Navigation -->
-			<div class="topnav" id="myTopnav">
+					<div class="topnav" id="myTopnav">
 				<nav class="main_nav" style="color: black    ">
 					<ul class="d-flex flex-row align-items-center justify-content-start">
-						<li ><a href="index.html">Home</a></li>
-
-
-						<li ><div class="Registrasi">
-							<button onclick="myFunction()" class="dropbtn" style="font-size: 15px;
-							font-weight: 600;
-							">Registrasi</button>
-							<div id="myDropdown" class="dropdown-content" style="color: #57ccc3">
-								<a href="registrasi Customer.html">Registrasi Customer</a>
-								<a href="registrasi_clinic.html">Registrasi Clinic</a>
-
-
-							</div>
-						</div></li>
-					
-
-
-
-
-						<style>
-						.dropbtn {
-							background-color: white;
-							color:  black;
-
-							font-size: 15px;
-							border: none;
-							cursor: pointer;
-						}
-
-						.dropbtn:hover, .dropbtn:focus {
-							background-color: white;
-							color:  #57ccc3;
-						}
-
-
-						.dropdown {
-							position: relative;
-							display: inline-block;
-						}
-
-						.dropdown-content {
-							display: none;
-							position: absolute;
-							background-color: white;
-							min-width: 160px;
-							overflow: auto;
-							
-						}
-
-						.dropdown-content a {
-							color: black;
-							padding: 12px 16px;
-							text-decoration: none;
-							display: block;
-						}
-							.dropdown-content2 {
-							display: none;
-							position: absolute;
-							background-color: white;
-							min-width: 160px;
-							overflow: auto;
-							
-						}
-
-						.dropdown-content2 a {
-							color: black;
-							padding: 12px 16px;
-							text-decoration: none;
-							display: block;
-						}
-
-						.dropdown a:hover {background-color:  white;}
-
-						.show {display: block;}
-					</style>
-					<script>
-/* When the user clicks on the button, 
-toggle between hiding and showing the dropdown content */
-function myFunction() {
-	document.getElementById("myDropdown").classList.toggle("show");
-}
-
-// Close the dropdown if the user clicks outside of it
-window.onclick = function(event) {
-	if (!event.target.matches('.dropbtn')) {
-
-		var dropdowns = document.getElementsByClassName("dropdown-content2");
-		var i;
-		for (i = 0; i < dropdowns.length; i++) {
-			var openDropdown = dropdowns[i];
-			if (openDropdown.classList.contains('show')) {
-				openDropdown.classList.remove('show');
-			}
-		}
-	}
-}
-</script>
-
-	<script>
-/* When the user clicks on the button, 
-toggle between hiding and showing the dropdown content */
-function myFunction2() {
-	document.getElementById("Dropdown").classList.toggle("show");
-}
-
-// Close the dropdown if the user clicks outside of it
-window.onclick = function(event) {
-	if (!event.target.matches('.dropbtn')) {
-
-		var dropdowns = document.getElementsByClassName("dropdown-content");
-		var i;
-		for (i = 0; i < dropdowns.length; i++) {
-			var openDropdown = dropdowns[i];
-			if (openDropdown.classList.contains('show')) {
-				openDropdown.classList.remove('show');
-			}
-		}
-	}
-}
-</script>
-
-
-
-<li><a href="about.html">About Us</a></li>
-<li class="active"><a href="contact.html">Confrim Payment</a></li>
-<li class=""><a href="myprofile.html">My Clinic</a></li>
+						<li ><a href="index.html"><i class="fas fa-reply-all" style="font-size: 24px; color: #556B2F"></i></a></li>
+						<li class="active "><a href="Payment.html">Payment Detail</a></li>
+						
 </ul>
 </nav>
  
@@ -232,45 +121,72 @@ window.onclick = function(event) {
 		<br>
 		<br>
 <!---------------->
-<section>
+ <br>
+      <br>
+      <br>
+      <br>
+       <br>
+      <br>
+      <br>
+      <br>
+       <br>
+      <br>
+      
+      
+  
 <div id="wrapper" >
   <div id="container" style="border-style: double; background-color: white;">
 
     <div id="info">
       <br>
       <br>
-      <br>
-      <img id="product" src="images/new.png" style="width: 100%;"><hr>
+    
 
-<br>
-     <p>Konfirmasi Pembayaranmu Disini</p>
-     <hr>
+      <img id="product" src="images/id.png" style="width: 100%;"><hr>
 
+
+  <?php 
+									$ambil =$koneksi-> query ( "SELECT * FROM langganan WHERE id_member='$_GET[id]'");
+									$pecah = $ambil->fetch_assoc();
+									?>
       <div id="price">
-
+      	<p style="font-size:18px; "><strong><?php echo ($pecah['jns_member']);?></strong></p>
+     <p>Rp.<?php echo ($pecah['hrg_member']);?></p>
+     <br>
+   
+<img src="images/Mandiri.png">
      
 
       </div>
     </div>
 
+
     <div id="payment">
+    	<form class="form" method="post">
 
-      <form id="checkout">
+      	<input id="nama" type="text" name="name" requierd="true" maxlength="50" placeholder="Nama "style="border-radius: 7px; border-style: double;font-size: 11px"><hr>
 
-         <input id="nama" type="text" name="name" requierd="true" maxlength="50" placeholder="Nama "style="border-radius: 7px; border-style: double;font-size: 11px">
+      	<input id="email" type="text" name="email" requierd="true" maxlength="50" placeholder="Email "style="border-radius: 7px; border-style: double;font-size: 11px"><hr>
+      	<input id="email" type="text" name="total" requierd="true" maxlength="50" readonly="" placeholder=Rp.<?php echo ($pecah['hrg_member']);?> value=<?php echo ($pecah['hrg_member']);?> style="border-radius: 7px; border-style: double;font-size: 11px; background-color: lightgrey;"><hr>
 
-        <input id="rekening" type=text pattern="[0-9]{13,16}" name="cardnumber" requierd="true" placeholder="No Rekening"style="border-radius: 7px; border-style: double; font-size: 11px">
-
-      
-       <input id="tel" type="text" name="name" requierd="true" maxlength="50" placeholder="Telepon" style="border-radius: 7px; border-style: double;font-size: 11px">
-
- <input id="tel" type="text" name="name" requierd="true" maxlength="50" placeholder="Tanggal Pembayaran" style="border-radius: 7px; border-style: double; font-size: 11px;">
+     
+     
+        <p style="font-size:12px; font-family: times rowman; " >Silahkan melakukan Pembayaran Sebesar <span style="border-bottom: solid;"> Rp.<?php echo ($pecah['hrg_member']);?></span> ke Rekening Mandiri 3333-01000-27894 a.n     PT.Mediskinku</p>
        
-       
-
-        <input class="btn" type="button" name="confrim" value="Confrim Payment">
-      </form>
+       <button name="save" type="submit" style="color: white;"> Pay now</button>
+  </form>
     </div>
+    <?php 
+if (isset($_POST['save']))
+{
+	
+		$koneksi->query("INSERT INTO payment(nama,email_pay,total)VALUES ('$_POST[name]','$_POST[email]','$_POST[total]')");
+		
+
+echo "<script>alert('Terimakasih Segera Lakukan Pembayaran Agar dapat melakukan Registrasi'); </script>";
+echo "<meta http-equiv='refresh' content='1;url=confrim_payment.php?halaman=produk'>";
+}
+?>
 
   </div>
 </div>

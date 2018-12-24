@@ -6,14 +6,17 @@ session_start();
  
 
 
-?>
 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>CLINICS</title>
-   <meta charset="utf-8">
+<title>Home</title>
+<meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <meta content="Webflow" name="generator">
+  <meta name="description" content="Dr PRO template project">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="styles/bootstrap-4.1.2/bootstrap.min.css">
   <link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -31,37 +34,46 @@ session_start();
   <link href="plugins/jquery-datepicker/jquery-ui.css" rel="stylesheet" type="text/css">
   <link rel="stylesheet" type="text/css" href="styles/main_styles.css">
   <link rel="stylesheet" type="text/css" href="styles/responsive.css">
+  <link href="css/normalize.css" rel="stylesheet" type="text/css">
+  <link href="css/webflow.css" rel="stylesheet" type="text/css">
+  <link href="css/book-project-css.webflow.css" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js" type="text/javascript"></script>
+  <script type="text/javascript">
+      WebFont.load({
+        google: {
+          families: ["PT Sans:400,400italic,700,700italic"]
+        }
+      });
+    </script>
+  <!-- [if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" type="text/javascript"></script><![endif] -->
+  <script type="text/javascript">
+      ! function(o, c) {
+        var n = c.documentElement,
+          t = " w-mod-";
+        n.className += t + "js", ("ontouchstart" in o || o.DocumentTouch && c instanceof DocumentTouch) && (n.className += t + "touch")
+      }(window, document);
+    </script>
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+<link rel="icon" href="images/favicon.ico" type="image/x-icon">
 
   <link rel="stylesheet" type="text/css" href="styles/loginsignup.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="css/style3.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-<link rel="stylesheet" type="text/css" href="css/cardku.css">
 <link rel="stylesheet" type="text/css" href="css/footer.css">
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-<link rel="icon" href="images/favicon.ico" type="image/x-icon">
-
-<!------ Include the above in your HEAD tag ---------->
 
 
-<!------ Include the above in your HEAD tag ---------->
- 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-</head>
-
-  
       <link rel="stylesheet" href="css/cardku2.css">
 
   
 <link href="css/bootstrap.min.css" rel="stylesheet">
 
+</head>
 
-<body style="background-image: url()">
+
+
+<body style="background-image: url(images/1.jpg) ; width:100%">
 
 
   
@@ -80,26 +92,115 @@ session_start();
       </div>
 
       <!-- Main Navigation -->
-      <div class="topnav" id="myTopnav">
+     <div class="topnav" id="myTopnav">
         <nav class="main_nav" style="color: black    ">
           <ul class="d-flex flex-row align-items-center justify-content-start">
-           
-           
+            <li class="" ><a href="index.php">Home</a></li>
+            
+            
+              <li ><div class="Login">
+              <button onclick="myFunction2()" class="dropbtn" style="font-size: 15px;
+              font-weight: 600;
+              ">Register & Login</button>
+              <div id="Dropdown" class="dropdown-content2" style="color: #57ccc3">
+                <a href="berlangganan.php">Register for Clinic</a>
+                <a href="login_klinik.php">Login as clinic</a>
+              </div>
+            </div></li>
+
+
+            <style>
+            .dropbtn {
+              background-color: white;
+              color:  black;
+
+              font-size: 15px;
+              border: none;
+              cursor: pointer;
+            }
+
+            .dropbtn:hover, .dropbtn:focus {
+              background-color: white;
+              color:  #57ccc3;
+            }
+
+
+            .dropdown {
+              position: relative;
+              display: inline-block;
+            }
+
+            .dropdown-content {
+              display: none;
+              position: absolute;
+              background-color: white;
+              min-width: 160px;
+              overflow: auto;
+              
+            }
+
+            .dropdown-content a {
+              color: black;
+              padding: 12px 16px;
+              text-decoration: none;
+              display: block;
+            }
+              .dropdown-content2 {
+              display: none;
+              position: absolute;
+              background-color: white;
+              min-width: 160px;
+              overflow: auto;
+              
+            }
+
+            .dropdown-content2 a {
+              color: black;
+              padding: 12px 16px;
+              text-decoration: none;
+              display: block;
+            }
+
+            .dropdown a:hover {background-color:  white;}
+
+            .show {display: block;}
+          </style>
+          
+
+  <script>
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction2() {
+  document.getElementById("Dropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+
+<li><a href="about.php">About Us</a></li>
+<li><a href="datadokter.php">Doctors</a></li>
+<li class="active"><a href="klinik.php">Clinic</a></li>
+<li><a href="confrim_payment.php">Confrim Payment</a></li>
 
 
 
+</ul>
+</nav>  
 
-
-         
-
-
-
-
-
-</nav>
-
-</div>
-
+</div> 
 
 <div class="header_extra d-flex flex-row align-items-center justify-content-end ml-auto">
 
@@ -117,8 +218,7 @@ session_start();
 
 </div>
 <!-- Hamburger -->
-<div class="hamburger"><i class="fa fa-bars" aria-hidden="true"></i></div>
-</div>
+
 </div>
 </header>
 
@@ -147,9 +247,9 @@ session_start();
 
  
             <!-- Footer Erha -->
-        <div class="col-lg-4 footer_col">
+        <div class="col-lg-3 footer_col">
           <div class="footer_contact">
-            <div class="footer_title" style="text-align: center; color: darkgrey;"><?php echo $pecah['klinik'];?></div><hr>
+            <div class="footer_title" style="text-align: center; color: darkgrey;"><p style="text-align: justify;"><?php echo $pecah['klinik'];?></p></div><hr>
             <div class="flip-card">
               <div class="flip-card-inner">
                 <div class="flip-card-front">

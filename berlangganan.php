@@ -1,3 +1,15 @@
+<?php
+session_start();
+ 
+include 'koneksi.php';
+
+
+
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -58,8 +70,9 @@
 			<div class="topnav" id="myTopnav">
 				<nav class="main_nav" style="color: black    ">
 					<ul class="d-flex flex-row align-items-center justify-content-start">
-						<li ><a href="index.html"><i class="fas fa-reply-all" style="font-size: 24px; color: #556B2F"></i></a></li>
+						<li ><a href="index.php"><i class="fas fa-reply-all" style="font-size: 24px; color: #556B2F"></i></a></li>
 						<li class="active "><a href="Berlangganan.html">Berlangganan</a></li>
+
 						
 </ul>
 </nav>
@@ -87,6 +100,9 @@
 </div>
 </div>
 </header>
+<?php
+echo "<script>alert('Silahkan Berlangganan Terlebih Dahulu'); </script>";
+?>
 <!-----------table----->
 			<div class="Home">
 
@@ -99,30 +115,20 @@
 			<div class="container">
 				<div class="row">
 					<!----card langganan---->
+					 <?php $ambil=$koneksi->query("SELECT * FROM langganan ");?>
+                  <?php while ($pecah=$ambil->fetch_assoc()){?> 
+  
+  
 					<div class="col-lg-4" style="float: right;">
 						<div class="card transition">
-							<h2 class="transition">Reguler </h2>
+							<h2 class="transition"> <?php echo $pecah['jns_member'];?></h2>
 
-							<div class="cta-container transition"><a href="payment.html" class="cta2">Rp. 69,999 </a></div>
+							<div class="cta-container transition"><a href="payment.php?id=<?php echo $pecah['id_member'];?>" class="cta2">Rp.  <?php echo $pecah['hrg_member'];?>/  <?php echo $pecah['bulanan'];?></a></div>
 							<div class="card_circle transition"></div>
 						</div>
 					</div>
-					<div class="col-lg-4">
-						<div class="card transition">
-							<h2 class="transition">Exclusive</h2>
-
-							<div class="cta-container transition"><a href="payment.html" class="cta2">Rp.124,999 </a></div>
-							<div class="card_circle transition"></div>
-						</div>
-					</div>
-					<div class="col-lg-4">
-						<div class="card transition">
-							<h2 class="transition">Premium </h2>
-
-							<div class="cta-container transition"><a href="payment.html" class="cta2">Rp. 399,999</a></div>
-							<div class="card_circle transition"></div>
-						</div>
-					</div>
+				
+                <?php }?>
 
 					
 				</div>

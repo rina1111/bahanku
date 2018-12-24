@@ -3,9 +3,6 @@
 <?php
 include 'koneksi.php';
 session_start();
- 
-
-
 ?>
 
 <html lang="en">
@@ -82,7 +79,7 @@ session_start();
 
 			<!-- Logo -->
 			<div class="logo">
-				<a href="#">
+				<a href="index.php">
 					<div style="color: #5F9EA0	">MediSkin<span style="color:#BDB76B ">Appointment</span></div><hr>
 					<div style="color: #556B2F">Make An Appointment <span style="color: #556B2F"> with your favorite clinic!</span></div><hr>
 					
@@ -93,39 +90,18 @@ session_start();
 			<div class="topnav" id="myTopnav">
 				<nav class="main_nav" style="color: black    ">
 					<ul class="d-flex flex-row align-items-center justify-content-start">
-						<li ><a href="index.html">Home</a></li>
-
-
-						<li ><div class="Registrasi">
-							<button onclick="myFunction()" class="dropbtn" style="font-size: 15px;
-							font-weight: 600;
-							">Registrasi</button>
-							<div id="myDropdown" class="dropdown-content" style="color: #57ccc3">
-								<a href="registrasi Customer.html">Registrasi Customer</a>
-								<a href="registrasi_clinic.html">Registrasi Klinik</a>
-
-
-							</div>
-						</div></li>
-
-
-
-
-<li ><div class="Login">
+						<li class=" " ><a href="index.php">Home</a></li>
+						
+						
+							<li ><div class="Login">
 							<button onclick="myFunction2()" class="dropbtn" style="font-size: 15px;
 							font-weight: 600;
-							">Login</button>
+							">Register & Login</button>
 							<div id="Dropdown" class="dropdown-content2" style="color: #57ccc3">
-								<a href="login.html">Login Customer</a>
-								<a href="reg_clinic.html">Login Klinik</a>
-
-
+								<a href="berlangganan.php">Register for Clinic</a>
+								<a href="login_klinik.php">Login as clinic</a>
 							</div>
 						</div></li>
-
-
-
-
 
 
 						<style>
@@ -184,28 +160,7 @@ session_start();
 
 						.show {display: block;}
 					</style>
-					<script>
-/* When the user clicks on the button, 
-toggle between hiding and showing the dropdown content */
-function myFunction() {
-	document.getElementById("myDropdown").classList.toggle("show");
-}
-
-// Close the dropdown if the user clicks outside of it
-window.onclick = function(event) {
-	if (!event.target.matches('.dropbtn')) {
-
-		var dropdowns = document.getElementsByClassName("dropdown-content2");
-		var i;
-		for (i = 0; i < dropdowns.length; i++) {
-			var openDropdown = dropdowns[i];
-			if (openDropdown.classList.contains('show')) {
-				openDropdown.classList.remove('show');
-			}
-		}
-	}
-}
-</script>
+					
 
 	<script>
 /* When the user clicks on the button, 
@@ -230,14 +185,17 @@ window.onclick = function(event) {
 }
 </script>
 
-<li class="active"><a href="about.html">About Us</a></li>
-<li><a href="appointment.html">Jadwal Dokter</a></li>
-<li><a href="appointment.html">Klinik</a></li>
+<li class="active"><a href="about.php">About Us</a></li>
+<li><a href="datadokter.php">Doctors</a></li>
+<li><a href="klinik.php">Clinic</a></li>
+<li><a href="confrim_payment.php">Confrim Payment</a></li>
+
+
+
 </ul>
 </nav>	
 
 </div>
-
 
 <div class="header_extra d-flex flex-row align-items-center justify-content-end ml-auto">
 
