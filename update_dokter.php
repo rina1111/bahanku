@@ -219,7 +219,13 @@ include 'koneksi.php';
                       </div>
                 </form>
              
+
+
+
+
  <?php 
+ 
+include 'koneksi.php';
 if (isset($_POST['save']))
 {
   $id_dokter=$_GET['id'];
@@ -230,12 +236,17 @@ $jadwal_dokter             = $_POST['jadwal_dokter'];
   $nama=$_FILES['foto']['name'];
   $lokasi=$_FILES['foto']['tmp_name'];
   move_uploaded_file($lokasi, "img_db/".$nama);
-  $query="UPDATE table_dokter SET nama_dokter='$nama_dokter'ruangan='$ruangan',alamat_dokter='$alamat_dokter',jadwal_dokter='$jadwal_dokter',foto='$nama' where id_dokter='$id_dokter'";
+ 
+// menyimpan data id kedalam variabel
+// query SQL untuk insert data
+$query="UPDATE tb_dokter SET nama_dokter='$nama_dokter',ruangan='$ruangan',alamat_dokter='$alamat_dokter',jadwal_dokter'$jadwal_dokter',foto='$nama' where id_dokter='$id_dokter'";
 mysqli_query($koneksi, $query);
-   
+// mengalihkan ke halaman index.php
+ echo"<script>alert('Data telah terupdate');</script>";
+
+
     
 
- echo"<script>alert('Data telah terupdate');</script>";
 
 }
 ?>

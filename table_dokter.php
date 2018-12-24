@@ -49,12 +49,12 @@
           <td><?php echo $nomor;?></td>
           <td><?php echo $pecah['nama_dokter'];?> </td>
           <td><?php echo $pecah['klinik_dokter'];?></td>
-          <td><?php echo $pecah['nama_dokter'];?></td>
+          <td><?php echo $pecah['ruangan'];?></td>
            <td><?php echo $pecah['jadwal_dokter'];?>
            </td>
          
-          <td><a href="update_dokter.php?halaman=detail&id=<?php echo $pecah['id_dokter'];?>" class="btn btn-warning">Update</a> </td>
-          <td><a href="hapusdokter.php?halaman=hapusproduk&id=<?php echo $pecah['id_dokter'];?>" class="btn-danger btn">hapus</a></td>
+          <td><a href="update_dokter.php?id=<?php echo $pecah['id_dokter'];?>" class="btn btn-warning">Update</a> </td>
+          <td><a href="hapusdokter.php?id=<?php echo $pecah['id_dokter'];?>" class="btn-danger btn">hapus</a></td>
         </tr>
        <?php $nomor++;?>
 								<?php }?>

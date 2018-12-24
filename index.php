@@ -182,7 +182,7 @@ window.onclick = function(event) {
 
 <li><a href="about.php">About Us</a></li>
 <li><a href="datadokter.php">Doctors</a></li>
-<li><a href="Clinic.html">Clinic</a></li>
+<li><a href="klinik.php">Clinic</a></li>
 
 
 

@@ -175,8 +175,13 @@ include 'koneksi.php';
                       <div class="form-group">
                           
                           <div class="col-xs-6">
+
+  <?php
+ if (isset($_SESSION['email'])){ 
+  ?>
+              
                              
-                              <input type="text" class="form-control" name="tlp" id="phone" placeholder="Telepon" title="enter your phone number if any.">
+                              <input type="text" class="form-control" name="tlp" id="phone"placeholder=<?php echo $_SESSION["telepon"];?>>
                           </div>
                       </div>
                           
@@ -190,17 +195,13 @@ include 'koneksi.php';
                           </div>
                       </div>
                                     <!--------php------>
-
-  <?php
- if (isset($_SESSION['email'])){ 
-  ?>
-                      <div class="form-group">
+                                     <div class="form-group">
                       <div class="col-md-6">
-                           <input type="text" class="form-control" name="tlp" id="phone" readonly="" placeholder=<?php echo $_SESSION["berlangganan"];?> >
+                           <input type="text" class="form-control" name="berlangganan" id="phone" readonly="" placeholder=<?php echo $_SESSION["berlangganan"];?> >
                              
-                    
-                </div>               
-                            </div>
+            
+                                </div>               
+                        </div>
 
                             <?php }?>
                        <div class="form-group">
